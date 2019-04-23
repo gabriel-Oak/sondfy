@@ -40,8 +40,7 @@ mjson.map( musica => {
     lista.appendChild(item); 
 });
 
-
-
+$('.add').click(criarPlaylist);
 $('#lista-default li a').click(function(e){e.preventDefault(); play(this)});
 let player = $('#audio-player')[0];
 
@@ -50,4 +49,10 @@ function play(musica){
     imagem.setAttribute('src', dadosMusica[0].img);
     player.src = musica.href;
     player.play();
+}
+
+function criarPlaylist(){
+    let div = $('.criar-container')[0];
+    div.style.display = 'block';
+    console.log(div.style.display);
 }

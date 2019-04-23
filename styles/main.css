@@ -17,7 +17,7 @@ a{text-decoration: none; color: white;}
         .main{display: flex; flex-direction: row; height: 500px; font-size: 1.5vw;}
     
         .lista{width: 25vw; height: 100%;  padding: 10px; line-height: 2em; }
-            .subheader{ background-color: #64DD17; padding: 5px; text-align: center; margin-bottom: 20px;}
+            .subheader{ background-color: #558B2F; padding: 5px; text-align: center; margin-bottom: 20px;}
             .lista ul{list-style: none;}
             .lista a{transition: .5s;}
             .lista a:hover{ color: #7CB342; }
@@ -28,7 +28,16 @@ a{text-decoration: none; color: white;}
             .player img{ height: 30vw; width: 100%; }
     
         .playlists{width: 25vw; height: 100%; padding: 10px; line-height: 2em;}
+        .add{color: white; border: none; padding: 10px; background-color: #7CB342; width: 100%; cursor: pointer; transition: .5s;} 
+        .add:hover{background-color: #64DD17;}
+
+/*--Criar Playlist--*/
+    .criar-container{background-color: rgba(104, 104, 104, 0.877); position: fixed; top: 0; right: 0; width: 100vw; height: 100vh;}
+        .criar-container article{ width: 50%; margin: auto; background-color: #212121; height: 100vh; padding: 20px;}
 }
+
+
+
 
 /*--Big Devices--*/
 @media screen and (min-width: 1200px){
@@ -42,7 +51,7 @@ a{text-decoration: none; color: white;}
     .main{display: flex; flex-direction: row; height: 500px;}
 
     .lista{width: 25vw; height: 100%;  padding: 10px; line-height: 2em; }
-        .subheader{ background-color: #64DD17; padding: 5px; text-align: center; margin-bottom: 20px;}
+        .subheader{ background-color: #558B2F; padding: 5px; text-align: center; margin-bottom: 20px;}
         .lista ul{list-style: none;}
         .lista a{transition: .5s;}
         .lista a:hover{ color: #7CB342; }
@@ -54,5 +63,12 @@ a{text-decoration: none; color: white;}
         .player img{ height: 30vw; width: 100%; }
 
     .playlists{width: 25vw; height: 100%; padding: 10px; line-height: 2em;}
+        .add{color: white; border: none; padding: 10px; background-color: #7CB342; width: 100%; cursor: pointer; transition: .5s;} 
+        .add:hover{background-color: #64DD17;}
+
+/*--Criar Playlist--*/
+    .criar-container{background-color: rgba(104, 104, 104, 0.877); position: fixed; top: 0; right: 0; width: 100vw; line-height: 2em; height: 100vh; display: none;}
+        .criar-container article{ width: 50%; margin: auto; background-color: #212121; height: 100vh; padding: 20px;}
+        .criar-container input{ width: 96%; height: 30px; background-color: #3d3d3d; color: white; border: none; padding: 0 2%;}
 }
 
