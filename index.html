@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="author" content="Gabriel Carvalho (oTrolado)"/>
+    <title>Sondfy</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Sondfy</h1>
+    </header>
+    <main class="main">
+        <section class="lista">
+            <header class="subheader">
+                <h1>Lista de musicas</h1>
+            </header>
+
+            <article class="content-lista">
+                <ul id="lista-default">
+                    
+                </ul>
+            </article>
+        </section>
+        <section class="player">
+            <article class="player-container">
+                <figure class="figure-player">
+                    <img src="https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg" alt="Alguma Imagem da banda aqui">
+                </figure>
+                <audio src="" id="audio-player" controls>
+                    Seu navegador não suporta audio :\
+                </audio>
+            </article>
+        </section>
+        <aside class="playlists">
+            <header class="subheader">
+                <h1>Playlists</h1>
+            </header>
+        </aside>
+    </main>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.0.js"
+    integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="controllers/main.js"></script>
+</body>
+</html>
