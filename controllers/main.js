@@ -25,11 +25,12 @@ const mjson = [
         "img":"imagens/stranger.jpg"
     }
 ];
-let lista = $('#lista-default')[0];
-let imagem = $('.figure-player img')[0];
 
+let imagem = $('.figure-player img')[0];
+let playlist = [];
 //gera a lista
 mjson.map( musica => { 
+    let lista = $('#lista-default')[0];
     let item = document.createElement('li');
     let innerItem = document.createElement('a');
     innerItem.setAttribute('class','arquivo-musica');
@@ -37,7 +38,7 @@ mjson.map( musica => {
     innerItem.setAttribute('id',musica.id);
     innerItem.innerText = musica.nome;
     item.appendChild(innerItem);
-    lista.appendChild(item); 
+    lista.appendChild(item);
 });
 
 $('.add').click(criarPlaylist);
@@ -53,6 +54,30 @@ function play(musica){
 
 function criarPlaylist(){
     let div = $('.criar-container')[0];
+    let lista = $('.selecao')[0];
+    
     div.style.display = 'block';
-    console.log(div.style.display);
+    lista.innerHtml = '';
+
+    mjson.map(musica => {
+        let teste = true;
+        playlist.map(item => {
+            if(musica == item){
+                teste = false;
+            }
+        });
+        if(teste){
+            let item = document.createElement('li');
+            
+        }
+        
+    });
+
 }
+
+/*
+if(teste){
+            playlist.push(musica);
+        }
+        console.log(playlist);
+        div.style.display = 'none';*/

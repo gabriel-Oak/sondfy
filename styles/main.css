@@ -34,6 +34,8 @@ a{text-decoration: none; color: white;}
 /*--Criar Playlist--*/
     .criar-container{background-color: rgba(104, 104, 104, 0.877); position: fixed; top: 0; right: 0; width: 100vw; height: 100vh;}
         .criar-container article{ width: 50%; margin: auto; background-color: #212121; height: 100vh; padding: 20px;}
+        .criar-container input{ width: 96%; height: 30px; background-color: #3d3d3d; color: white; border: none; padding: 0 2%;}
+        .criar-container ul{list-style: none;}
 }
 
 
@@ -70,5 +72,6 @@ a{text-decoration: none; color: white;}
     .criar-container{background-color: rgba(104, 104, 104, 0.877); position: fixed; top: 0; right: 0; width: 100vw; line-height: 2em; height: 100vh; display: none;}
         .criar-container article{ width: 50%; margin: auto; background-color: #212121; height: 100vh; padding: 20px;}
         .criar-container input{ width: 96%; height: 30px; background-color: #3d3d3d; color: white; border: none; padding: 0 2%;}
+        .criar-container ul{list-style: none;}
 }
 
