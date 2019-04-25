@@ -8,61 +8,41 @@
     <title>Sondfy</title>
 
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
 </head>
 <body>
-    <header class="header">
-        <h1>Sondfy</h1>
-    </header>
     <main class="main">
-        <section class="lista">
-            <header class="subheader">
-                <h1>Lista de musicas</h1>
-            </header>
-
-            <article class="content-lista">
-                <ul id="lista-default">
-                    
-                </ul>
-            </article>
-        </section>
-        <section class="player">
-            <article class="player-container">
-                <figure class="figure-player">
-                    <img src="https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg" alt="Alguma Imagem da banda aqui">
-                </figure>
-                <audio src="" id="audio-player" controls>
-                    Seu navegador não suporta audio :\
-                </audio>
-            </article>
-        </section>
-        <aside class="playlists">
-            <header class="subheader">
-                <h1>Playlist</h1>
-            </header>
-            <section>
-                <button class="add"><strong>Adicionar à playlist</strong></button>
-            </section>
-        </aside>
-
-        <section class="criar-container">
-            <article>
-                <header class="subheader">
-                    <h1>Adicionar à Playlist</h1>
-                </header>
+        <section class="top-content">
+            <nav class="side-nav">
                 
-                <!--<input type="text" placeholder="Nome da playlist">-->
-                <ul class="selecao">
+                <article class="library">
+                        <h2>BIBLIOTECA</h2>
+                        <ul class="library-options">
+                            <li><i class="fas fa-file-audio"></i> PLAYLISTS</li>
+                            <li><i class="fas fa-user-alt"></i> ARTISTAS</li>
+                            <li><i class="fas fa-dot-circle"></i> ALBUNS</li>
+                            <li><i class="fas fa-music"></i> MUSICAS</li>
+                        </ul>
+                    </article>
+    
+                    <article class="discover">
+                            <h2>DESCUBRA</h2>
+                            <ul class="discover-options">
+                                <li><i class="fas fa-store-alt"></i> STORE</li>
+                                <li><i class="fas fa-broadcast-tower"></i> RADIO</li>
+                                <li><i class="fas fa-heart"></i> LIKE</li>
+                                <li><i class="fas fa-folder"></i> BROWSE</li>
+                            </ul>
+                    </article>
 
-                </ul>
-            </article>
+            </nav>
+            <article class="content"></article>
+        </section>
+        <section class="bot-content">
+            player
         </section>
     </main>
-
-    <script
-    src="https://code.jquery.com/jquery-3.4.0.js"
-    integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
-    crossorigin="anonymous"></script>
-    <script type="text/javascript" src="controllers/main.js"></script>
 </body>
 </html>
