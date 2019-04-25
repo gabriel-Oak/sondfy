@@ -9,3 +9,11 @@ function toggleMenu(){
         menu.classList.replace('no-nav', 'side-nav');
     }
 }
+
+function conserta(){
+    if(window.innerWidth > 768 ){
+        let menu = document.getElementById('navigator');
+        menu.style.display = 'block';
+        menu.classList.replace('no-nav', 'side-nav');
+    }
+}
