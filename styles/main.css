@@ -2,6 +2,9 @@
 *{margin: 0; top: 0; left: 0; font-size: 100%; outline: 0;}
 body{font-family: Arial, Helvetica, sans-serif; color: white;}
 
+.botao{background-color: transparent; border: none; color: white; transition: color .5s; cursor: pointer;}
+.botao:hover{ color: #f22254;}
+
 .side-nav{background-color: #1d2d3c; animation: menuIn ease-out .4s 1;}
     .side-nav li{ cursor: pointer; transition: color .5s;}
     .side-nav li:hover{ color: #f22254; }
@@ -12,7 +15,13 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
 
 .content{background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 60vh;}
 
-.bot-content{background-color: #293e53;}
+.bot-content{background-color: #293e53; display: flex; flex-direction: row;}
+    .arrow{ margin: auto 20px; }
+    .play{background-color: #f22254; height: 50px; width: 50px; border-radius: 50px; margin: auto 0; transition: .5s; box-shadow: 0px 1px 2px black;}
+        .play:hover{background-color: white; color: #f22254;}
+        .play i{margin: auto;}
+    #progress-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
+    #progress-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
 
 .main{display:flex; flex-direction:column;}
 
@@ -45,6 +54,11 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     
     /*Player*/
     .bot-content{height: 8vh;}
+        .musica-atual{display: none;}
+        .bot-content .arrow{font-size: 15px;}
+        .play{font-size: 30px;}
+        #progress-container{width: 35vw;}
+        #progress-bar{ width: 89%; }
 }
 
 /*--Praq?--*/
@@ -63,6 +77,11 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
    
    /*Player*/
    .bot-content{height: 8vh;}
+        .musica-atual{display: none;}
+        .bot-content .arrow{font-size: 20px;}
+        .play{font-size: 30px;}
+        #progress-container{width: 35vw;}
+        #progress-bar{ width: 20%; }
 }
 
 /*--Not so big--*/
@@ -81,6 +100,11 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
    
    /*Player*/
    .bot-content{height: 10vh;}
+        .bot-content .musica-atual{margin: auto 20px auto 30px;}
+        .bot-content .arrow{font-size: 25px;}
+        .play{font-size: 30px;}
+        #progress-container{width: 35vw;}
+        #progress-bar{ width: 46%; }
 }
 
 
@@ -99,5 +123,10 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     
     /*Player*/
     .bot-content{height: 10vh;}
+        .bot-content .musica-atual{margin: auto 20px auto 50px;}
+        .bot-content .arrow{font-size: 25px;}
+        .play{font-size: 40px;}
+        #progress-container{width: 40vw;}
+        #progress-bar{ width: 40%; }
 }
 
