@@ -2,15 +2,32 @@
 *{margin: 0; top: 0; left: 0; font-size: 100%; outline: 0;}
 body{font-family: Arial, Helvetica, sans-serif; color: white;}
 
-.side-nav{background-color: #1d2d3c;}
+.side-nav{background-color: #1d2d3c; animation: menuIn ease-out .4s 1;}
     .side-nav li{ cursor: pointer; transition: color .5s;}
     .side-nav li:hover{ color: #f22254; }
+    .menu-div #check{display: none;}
+    .menu-div #botaoM{ position: absolute; z-index: 1; top: 15px; left: 15px; cursor: pointer; transition: color .5s;}
+    .menu-div #botaoM:hover{ color: #f22254;}
+    .no-nav{animation: menuOut ease-out .4s 1;}
 
 .content{background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 60vh;}
 
 .bot-content{background-color: #293e53;}
 
 .main{display:flex; flex-direction:column;}
+
+/*ANIMAÇÕES*/
+@keyframes menuOut {
+    0% {left: 0; display: block;}
+    99%{left: -500px; display: block}
+    100%{left: -500px; display: none};
+}
+@keyframes menuIn {
+    0% {left: -500px; display: none;}
+    1%{left: -500px; display: block}
+    100%{left: 0px; display: none};
+}
+
 
 /*--Cellphone--*/
 @media screen and (max-width: 479px){
@@ -58,7 +75,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
    .side-nav{width: 20vw;}
    .side-nav h2{ margin: 20px auto 20px 10%}
        .side-nav ul{list-style: none; line-height: 40px; margin: 0 auto 20px -5%;}
-   /*Conteudo*/
+       .menu-div{ display: none; }
+       /*Conteudo*/
    .content{height: 100%; width: 80vw;}
    
    /*Player*/
@@ -75,6 +93,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     .side-nav{width: 20vw;}
     .side-nav h2{ margin: 20px auto 20px 10%}
         .side-nav ul{list-style: none; line-height: 40px; margin: 0 auto 20px -5%;}
+        .menu-div{ display: none; }
     /*Conteudo*/
     .content{height: 100%; width: 80vw;}
     

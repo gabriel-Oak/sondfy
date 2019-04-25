@@ -15,8 +15,16 @@
 <body>
     <main class="main">
         <section class="top-content">
-            <nav class="side-nav">
+                <div class="menu-div">
+                    
+                        <input type="checkbox" id="check">
+                        <label id="botaoM" for="ceck" onclick="toggleMenu()"><i class="fas fa-bars"></i></label>
+                        
+                    </div>
+
+            <nav id="navigator" class="side-nav">
                 
+
                 <article class="library">
                         <h2>BIBLIOTECA</h2>
                         <ul class="library-options">
@@ -44,5 +52,7 @@
             player
         </section>
     </main>
+
+    <script type="text/javascript" src="controllers/main.js"></script>
 </body>
 </html>
