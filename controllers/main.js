@@ -101,12 +101,12 @@ function playerEnd(){
             else if(musicas.filter(musica => musica.id == nome+1).length != 0) return setTimeout(tocar(++nome),1010);
             else return setTimeout(tocar(0),1000);
         
-        } else if(random){
+        } else if(random && !player.loop){
 
             if(inPlaylist) return console.log('Item Aleatorio da playlist');
             else return setTimeout(tocar(Math.floor(Math.random() * parseFloat(musicas.length - 0.1))),1010);
 
-        }
+        } else if(player.loop) return setTimeout(tocar(nome),1010);
 
         return false;
     } 
@@ -129,7 +129,7 @@ function pausePlay(){
     }
 }
 
-function progresBar(n){
+function progresBar(){
 
     if(playing){
         setTimeout(function(){
