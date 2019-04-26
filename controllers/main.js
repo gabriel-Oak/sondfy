@@ -1,6 +1,9 @@
 
 let musicas = fetchMusicas();
-
+let player = document.getElementById('audio');
+let playing = false;
+let iconePlayer = document.getElementById('icone-play');
+let textoMusica = document.getElementById('musica-atual');
 
 function toggleMenu(){
     let menu = document.getElementById('navigator');
@@ -25,12 +28,12 @@ function conserta(){
 function createLista(dados){
     let lista = document.getElementById('lista-default');
     if(dados.length > -1){
-        dados.map(musica => {
+        return dados.map(musica => {
             let item = document.createElement('li');
             item.classList.add('item-musica');
-            item.setAttribute('name',musica.id);
-            item.innerText = musica.nome;
-            item.setAttribute('onclick','tocarMusica(this.getAttribute("name"))')
+            item.setAttribute('id',musica.id);
+            item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
+            item.setAttribute('onclick','tocarMusica(this)')
             lista.appendChild(item);
         });
     }
@@ -38,6 +41,30 @@ function createLista(dados){
 
 function tocarMusica(item){
     console.log(item);
+    return tocar(item.id);
+}
+
+function tocar(id){
+    let dadosMusica = musicas.filter(item => item.id == id);
+    player.src = dadosMusica[0].url;
+    iconePlayer.classList.replace('fa-caret-right','fa-pause');
+    textoMusica.childNodes[1].innerHTML = dadosMusica[0].nome;
+    textoMusica.childNodes[3].innerHTML = dadosMusica[0].artista;
+    console.log(dadosMusica.nome);
+    playing = true;
+    return player.play();
+}
+
+function pausePlay(){
+    if(playing){
+        playing = false;
+        iconePlayer.classList.replace('fa-pause','fa-caret-right');
+        return player.pause();
+    } else{
+        playing = true;
+        iconePlayer.classList.replace('fa-caret-right','fa-pause');
+        return player.play();
+    }
 }
 
 createLista(musicas);

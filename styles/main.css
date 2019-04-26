@@ -73,6 +73,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         #progress-container{width: 35vw;}
         #progress-bar{ width: 89%; }
         #tempo{display: none;}
+        .fa-pause{font-size: 15px!important; position: relative; top: 2px;}
 }
 
 
@@ -98,6 +99,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .play{font-size: 20px; height: 30px!important; width: 30px!important; border-radius: 50px;}
         #progress-container{width: 35vw;}
         #progress-bar{ width: 20%; }
+        .fa-caret-right{position: relative; left: 1px; top: 3px;}
+        .fa-pause{font-size: 15px!important; position: relative;}
 }
 
 /*--Not so big--*/
@@ -123,6 +126,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .play{font-size: 30px;}
         #progress-container{width: 30vw;}
         #progress-bar{ width: 46%; }
+        .fa-caret-right{position: relative; left: 2px; top: 3px;}
+        .fa-pause{font-size: 20px!important; top: -2px; position: relative;}
 }
 
 
@@ -147,6 +152,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .bot-content .musica-atual{margin: auto 20px auto 50px;}
         .arrow{font-size: 25px;}
         .play{font-size: 40px;}
+        .fa-caret-right{position: relative; left: 3px;}
+        .fa-pause{font-size: 20px!important; top: -10px; position: relative;}
         #progress-container{width: 40vw;}
         #progress-bar{ width: 40%; }
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
