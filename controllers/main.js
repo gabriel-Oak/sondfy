@@ -83,6 +83,16 @@ function tocar(nome){
     textoMusica.childNodes[1].innerHTML = dadosMusica[0].nome;
     textoMusica.childNodes[3].innerHTML = dadosMusica[0].artista;
 
+        if(typeof(Worker) !== 'undefined' ){
+            if(typeof(progress) == 'undefined'){
+                pregress = new Worker('progress-bar.js');
+            }
+            progress.onmessage = function(event){
+                console.log(event.data);
+            }
+        }
+    
+
     playing = true;
     player.play();
     return player.setAttribute('playing', nome);
@@ -154,14 +164,6 @@ function next(){
     return player.currentTime = player.duration;
 }
 
-function barChange(){
-    let total = player.duration;
-    let current = player.currentTime;
-    let percent = total / current;
-    console.log(percent);
-    return setTimeout(1000, barChange());
 
-    
-}
 
 createLista(musicas);
