@@ -85,12 +85,12 @@ function tocar(nome){
     
     playing = true;
     player.play();
-    progresBar(parseInt());
+    setTimeout(progresBar(parseInt(player.currentTime),1010));
     return player.setAttribute('playing', nome);
 }
 
 function playerEnd(){
-    
+    playing = false;
     if(player.getAttribute('playing')){
 
         nome = parseInt(player.getAttribute('playing'));
@@ -98,14 +98,13 @@ function playerEnd(){
         if( !player.loop && !random ) {
     
             if( inPlaylist ) return console.log('proximo da playlist');
-            else if(musicas.filter(musica => musica.id == nome+1).length != 0) return tocar(++nome);
-            else return tocar(0);
+            else if(musicas.filter(musica => musica.id == nome+1).length != 0) return setTimeout(tocar(++nome),1010);
+            else return setTimeout(tocar(0),1000);
         
         } else if(random){
 
-            if(inPlaylist){
-                return console.log('Item Aleatorio da playlist');
-            } else return tocar(Math.floor(Math.random() * parseFloat(musicas.length - 0.1)));
+            if(inPlaylist) return console.log('Item Aleatorio da playlist');
+            else return setTimeout(tocar(Math.floor(Math.random() * parseFloat(musicas.length - 0.1))),1010);
 
         }
 
@@ -124,22 +123,23 @@ function pausePlay(){
 
         playing = true;
         iconePlayer.classList.replace('fa-caret-right','fa-pause');
+        progresBar();
         return player.play();
 
     }
 }
 
-function progresBar(){
+function progresBar(n){
 
-    setTimeout(function(){
-        let total = player.duration;
-        let current = player.currentTime;
-        let percent = parseFloat(current/(total/100));
-        console.log(percent+"%");
-        progressBar.style.width = percent+'%';
-        progresBar()
-    },1000);
-
+    if(playing){
+        setTimeout(function(){
+            let total = player.duration;
+            let current = player.currentTime;
+            let percent = parseFloat(current/(total/100));
+            progressBar.style.width = percent+'%';
+            progresBar(parseInt(player.currentTime));
+        },1000);
+    } 
 }
 
 function toggleRepeat(){
