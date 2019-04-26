@@ -62,17 +62,17 @@
                 <h3>Lorem Ipsum</h3>
                 <span>Mario e os fronts</span>
             </div>
-            <button class="botao arrow"><i class="fas fa-backward"></i></button>
+            <button class="botao arrow" onclick="prev()"><i class="fas fa-backward"></i></button>
             <button class="botao play" onclick="pausePlay()"><i class="fas fa-caret-right" id="icone-play"></i></button>
-            <button class="botao arrow"><i class="fas fa-forward"></i></button>
+            <button class="botao arrow" onclick="next()"><i class="fas fa-forward"></i></button>
             <div id="progress-container">
                 <div id="progress-bar"></div>
-                <audio src="" id="audio"></audio>
+                <audio src="" id="audio" onended="playerEnd()" ondurationchange="barChange()"></audio>
             </div>
             <span id="tempo">-3:23</span>
-            <button class="botao loops" id="random"><i class="fas fa-random"></i></button>
-            <button class="botao loops" id="random" id="repeat"><i class="fas fa-redo-alt"></i></button>
-            <button class="botao loops" id="volume" id="repeat"><i class="fas fa-volume-up"></i></button>
+            <button class="botao loops" id="random" onclick="toggleRandom()"><i class="fas fa-random"></i></button>
+            <button class="botao loops" id="repeat" onclick="toggleRepeat()"><i class="fas fa-redo-alt"></i></button>
+            <button class="botao loops" id="volume"><i class="fas fa-volume-up"></i></button>
             <div id="volume-container">
                 <div id="volume-bar"></div>
             </div>

@@ -4,67 +4,164 @@ let player = document.getElementById('audio');
 let playing = false;
 let iconePlayer = document.getElementById('icone-play');
 let textoMusica = document.getElementById('musica-atual');
+let inPlaylist = false;
+let random = false;
+let progressBar = document.getElementById('progress-bar');
+
+player.addEventListener('ended', playerEnd());
 
 function toggleMenu(){
     let menu = document.getElementById('navigator');
     if(!menu.classList.contains('no-nav')) {
+
         menu.classList.add('side-nav', 'no-nav');
         setTimeout(() => menu.style.display = 'none', 400);
+
     }
     else {
+
         menu.style.display = 'block';
         menu.classList.replace('no-nav', 'side-nav');
+
     }
 }
 
 function conserta(){
     if(window.innerWidth > 768 ){
+
         let menu = document.getElementById('navigator');
         menu.style.display = 'block';
         menu.classList.replace('no-nav', 'side-nav');
+
     }
 }
 
 function createLista(dados){
     let lista = document.getElementById('lista-default');
     if(dados.length > -1){
+
         return dados.map(musica => {
             let item = document.createElement('li');
-            item.classList.add('item-musica');
-            item.setAttribute('id',musica.id);
+            item.classList.add('item-musica', musica.id);
+            item.setAttribute('name',musica.id);
             item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
             item.setAttribute('onclick','tocarMusica(this)')
             lista.appendChild(item);
         });
+
     }
 }
 
 function tocarMusica(item){
-    console.log(item);
-    return tocar(item.id);
+    inPlaylist = false;
+    return tocar(item.getAttribute('name'));
 }
 
-function tocar(id){
-    let dadosMusica = musicas.filter(item => item.id == id);
+function deactive(elements){
+    for(let i = 0; i < elements.length; i++){
+        elements[i].classList.remove('musica-active');
+    }
+}
+
+function active(elements){
+    for(let i = 0; i < elements.length; i++){
+        elements[i].classList.add('musica-active');
+    }
+}
+
+function tocar(nome){
+    if(nome < 0) return false;
+    let htmlElements = document.getElementsByClassName('musica-active');
+    deactive(htmlElements);
+
+    let htmlElement = document.getElementsByName(nome);
+    active(htmlElement);
+
+    let dadosMusica = musicas.filter(item => item.id == nome);
     player.src = dadosMusica[0].url;
     iconePlayer.classList.replace('fa-caret-right','fa-pause');
     textoMusica.childNodes[1].innerHTML = dadosMusica[0].nome;
     textoMusica.childNodes[3].innerHTML = dadosMusica[0].artista;
-    console.log(dadosMusica.nome);
+
     playing = true;
-    return player.play();
+    player.play();
+    return player.setAttribute('playing', nome);
+}
+
+function playerEnd(){
+    
+    if(player.getAttribute('playing')){
+
+        nome = parseInt(player.getAttribute('playing'));
+
+        if( !player.loop && !random ) {
+    
+            if( inPlaylist ) return console.log('proximo da playlist');
+            else if(musicas.filter(musica => musica.id == nome+1).length != 0) return tocar(++nome);
+            else return tocar(0);
+        
+        } else if(random){
+
+            if(inPlaylist){
+                return console.log('Item Aleatorio da playlist');
+            } else return tocar(Math.floor(Math.random() * parseFloat(musicas.length - 0.1)));
+
+        }
+
+        return false;
+    } 
 }
 
 function pausePlay(){
     if(playing){
+        
         playing = false;
         iconePlayer.classList.replace('fa-pause','fa-caret-right');
         return player.pause();
+
     } else{
+
         playing = true;
         iconePlayer.classList.replace('fa-caret-right','fa-pause');
         return player.play();
+
     }
+}
+
+function toggleRepeat(){
+    
+    let button = document.getElementById('repeat');
+    player.loop = !player.loop;;
+    if(player.loop) return button.classList.add('active');
+    else return button.classList.remove('active');
+
+}
+
+function toggleRandom(){
+    
+    let button = document.getElementById('random');
+    random = !random;
+    if(random) return button.classList.add('active');
+    else return button.classList.remove('active');
+
+}
+
+function prev(){
+    if(player.getAttribute('playing')) return tocar(parseInt(player.getAttribute('playing')-1));
+}
+
+function next(){
+    return player.currentTime = player.duration;
+}
+
+function barChange(){
+    let total = player.duration;
+    let current = player.currentTime;
+    let percent = total / current;
+    console.log(percent);
+    return setTimeout(1000, barChange());
+
+    
 }
 
 createLista(musicas);
