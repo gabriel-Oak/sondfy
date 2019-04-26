@@ -165,7 +165,7 @@ function prev(){
 }
 
 function next(){
-    return player.currentTime = player.duration;
+    return playerEnd();
 }
 
 
