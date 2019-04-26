@@ -16,11 +16,14 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
 .content{background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 60vh;}
     .content article{box-shadow: 0px 1px 2px #333; padding: 16px; background-color: rgba(444, 444, 444, .2); border-radius: 5px; margin: 10px auto}
     .content h1{text-align: center; font-size: 40px;}
+    .content ul{ list-style: none; }
+    .item-musica{cursor: pointer; transition: color .5s; line-height: 20px; font-size: 20px}
+    .item-musica:hover {color: #f22293;}
     
 
 
 .bot-content{background-color: #293e53; display: flex; flex-direction: row; width:100%;}
-    .bot-content div{height: 100%;}
+    
     .arrow{ margin: auto 10px; }
     .loops{ margin: auto 10px; }
     .play{background-color: #f22254; height: 40px; width: 40px; border-radius: 50px; margin: auto 0; transition: .5s; box-shadow: 0px 1px 2px black;}
