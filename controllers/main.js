@@ -138,7 +138,8 @@ function progresBar(n){
             let current = player.currentTime;
             let percent = parseFloat(current/(total/100));
             progressBar.style.width = percent+'%';
-            tempo.innerText = '-' + Math.round(player.duration -  player.currentTime)+ 's';
+            //tempo.innerText = '-' + Math.round(player.duration -  player.currentTime)+ 's';
+            tempo.innerText = '-' + parseInt((player.duration - player.currentTime) / 60) + ':' + parseInt((player.duration - player.currentTime) % 60)
             progresBar(parseInt(player.currentTime));
         },1000);
     } 
