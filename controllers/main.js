@@ -133,10 +133,12 @@ function progresBar(n){
 
     if(playing){
         setTimeout(function(){
+            let tempo = document.getElementById('tempo');
             let total = player.duration;
             let current = player.currentTime;
             let percent = parseFloat(current/(total/100));
             progressBar.style.width = percent+'%';
+            tempo.innerText = '-' + Math.round(player.duration -  player.currentTime)+ 's';
             progresBar(parseInt(player.currentTime));
         },1000);
     } 
