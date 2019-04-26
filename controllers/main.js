@@ -82,19 +82,10 @@ function tocar(nome){
     iconePlayer.classList.replace('fa-caret-right','fa-pause');
     textoMusica.childNodes[1].innerHTML = dadosMusica[0].nome;
     textoMusica.childNodes[3].innerHTML = dadosMusica[0].artista;
-
-        if(typeof(Worker) !== 'undefined' ){
-            if(typeof(progress) == 'undefined'){
-                pregress = new Worker('progress-bar.js');
-            }
-            progress.onmessage = function(event){
-                console.log(event.data);
-            }
-        }
     
-
     playing = true;
     player.play();
+    progresBar(parseInt());
     return player.setAttribute('playing', nome);
 }
 
@@ -136,6 +127,19 @@ function pausePlay(){
         return player.play();
 
     }
+}
+
+function progresBar(){
+
+    setTimeout(function(){
+        let total = player.duration;
+        let current = player.currentTime;
+        let percent = parseFloat(current/(total/100));
+        console.log(percent+"%");
+        progressBar.style.width = percent+'%';
+        progresBar()
+    },1000);
+
 }
 
 function toggleRepeat(){

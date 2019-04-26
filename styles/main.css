@@ -33,7 +33,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .play:hover{background-color: white; color: #f22254;}
         .play i{margin: auto;}
     #progress-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
-    #progress-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
+    #progress-bar{ width: 0%; background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
     #tempo{margin: auto 10px}
     #volume-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
     #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
@@ -74,7 +74,6 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .loops{ margin: auto 5px!important;}
         .play{font-size: 15px; height: 30px!important; width: 30px!important;}
         #progress-container{width: 35vw;}
-        #progress-bar{ width: 89%; }
         #tempo{display: none;}
         .fa-pause{font-size: 15px!important; position: relative; top: 2px;}
 }
@@ -101,7 +100,6 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .arrow{font-size: 15px;}
         .play{font-size: 20px; height: 30px!important; width: 30px!important; border-radius: 50px;}
         #progress-container{width: 35vw;}
-        #progress-bar{ width: 20%; }
         .fa-caret-right{position: relative; left: 1px; top: 3px;}
         .fa-pause{font-size: 15px!important; position: relative;}
 }
@@ -128,7 +126,6 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .arrow{font-size: 20px;}
         .play{font-size: 30px;}
         #progress-container{width: 30vw;}
-        #progress-bar{ width: 46%; }
         .fa-caret-right{position: relative; left: 2px; top: 3px;}
         .fa-pause{font-size: 20px!important; top: -2px; position: relative;}
 }
@@ -158,7 +155,6 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         .fa-caret-right{position: relative; left: 3px;}
         .fa-pause{font-size: 20px!important; top: -10px; position: relative;}
         #progress-container{width: 40vw;}
-        #progress-bar{ width: 40%; }
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
         #volume-bar{ width: 40%; }
         
