@@ -28,10 +28,10 @@
                 <article class="library">
                         <h2>BIBLIOTECA</h2>
                         <ul class="library-options">
-                            <li><i class="fas fa-file-audio"></i> PLAYLISTS</li>
-                            <li><i class="fas fa-user-alt"></i> ARTISTAS</li>
-                            <li><i class="fas fa-dot-circle"></i> ALBUNS</li>
-                            <li><i class="fas fa-music"></i> MUSICAS</li>
+                            <li onclick="router(this)" id="playlists-link" class="links"><i class="fas fa-file-audio"></i> PLAYLISTS</li>
+                            <li onclick="router(this)" id="artistas-link" class="links"><i class="fas fa-user-alt"></i> ARTISTAS</li>
+                            <li onclick="router(this)" id="albuns-link" class="links"><i class="fas fa-dot-circle"></i> ÁLBUNS</li>
+                            <li onclick="router(this)" id="musicas-link" class="links"><i class="fas fa-music"></i> MÚSICAS</li>
                         </ul>
                     </article>
     
@@ -48,13 +48,27 @@
             </nav>
             <article class="content">
 
-                <article id="container-musicas">
-                    <h1>MUSICAS</h1>
+                <article id="container-musicas" class="offline secoes">
+                    <h1>MÚSICAS</h1>
                     <ul id="lista-default">
 
                     </ul>
                 </article>
 
+                <article id="container-playlists" class="offline secoes">
+                    <h1>PAYLISTS</h1>
+                    
+                </article>
+                
+                <article id="container-artistas" class="offline secoes">
+                    <h1>ARTISTAS</h1>
+                    
+                </article>
+
+                <article id="container-albuns" class="offline secoes">
+                    <h1>ÁLBUNS</h1>
+                    
+                </article>
             </article>
         </section>
         <section class="bot-content">

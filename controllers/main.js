@@ -10,6 +10,40 @@ let progressBar = document.getElementById('progress-bar');
 
 player.addEventListener('ended', playerEnd());
 
+function remove(items){
+    for(let i = 0; i < items.length; i++){
+        items[i].classList.add('offline');
+    }
+}
+
+ function unselect(items){
+    for(let i = 0; i < items.length; i++){
+        items[i].classList.remove('active');
+    }
+}
+
+function router(link){
+    let containers = document.getElementsByClassName('secoes');
+    let links = document.getElementsByClassName('links');
+
+    unselect(links);
+    remove(containers);
+    
+    if(link.id == 'musicas-link'){
+        document.getElementById('container-musicas').classList.remove('offline');
+        document.getElementById('musicas-link').classList.add('active');
+    } else if(link.id == 'playlists-link'){
+        document.getElementById('container-playlists').classList.remove('offline');
+        document.getElementById('playlists-link').classList.add('active');
+    } else if(link.id == 'artistas-link'){
+        document.getElementById('container-artistas').classList.remove('offline');
+        document.getElementById('artistas-link').classList.add('active');
+    } else{
+        document.getElementById('container-albuns').classList.remove('offline');
+        document.getElementById('albuns-link').classList.add('active');
+    }
+}
+
 function toggleMenu(){
     let menu = document.getElementById('navigator');
     if(!menu.classList.contains('no-nav')) {
@@ -138,7 +172,6 @@ function progresBar(){
             let current = player.currentTime;
             let percent = parseFloat(current/(total/100));
             progressBar.style.width = percent+'%';
-            //tempo.innerText = '-' + Math.round(player.duration -  player.currentTime)+ 's';
             tempo.innerText = '-' + parseInt((player.duration - player.currentTime) / 60) + ':' + parseInt((player.duration - player.currentTime) % 60)
             progresBar(parseInt(player.currentTime));
         },1000);
