@@ -46,17 +46,19 @@ function router(link){
 
 function toggleMenu(){
     let menu = document.getElementById('navigator');
-    if(!menu.classList.contains('no-nav')) {
+    if(window.innerWidth < 768){
+        if(!menu.classList.contains('no-nav')) {
 
-        menu.classList.add('side-nav', 'no-nav');
-        setTimeout(() => menu.style.display = 'none', 400);
-
-    }
-    else {
-
-        menu.style.display = 'block';
-        menu.classList.replace('no-nav', 'side-nav');
-
+            menu.classList.add('side-nav', 'no-nav');
+            setTimeout(() => menu.style.display = 'none', 400);
+    
+        }
+        else {
+    
+            menu.style.display = 'block';
+            menu.classList.replace('no-nav', 'side-nav');
+    
+        }
     }
 }
 
@@ -116,7 +118,8 @@ function tocar(nome){
     iconePlayer.classList.replace('fa-caret-right','fa-pause');
     textoMusica.childNodes[1].innerHTML = dadosMusica[0].nome;
     textoMusica.childNodes[3].innerHTML = dadosMusica[0].artista;
-    
+    document.getElementById('capa').src = dadosMusica[0].img;
+
     playing = true;
     player.play();
     setTimeout(progresBar(parseInt(player.currentTime),1010));

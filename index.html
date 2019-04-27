@@ -28,10 +28,10 @@
                 <article class="library">
                         <h2>BIBLIOTECA</h2>
                         <ul class="library-options">
-                            <li onclick="router(this)" id="playlists-link" class="links"><i class="fas fa-file-audio"></i> PLAYLISTS</li>
-                            <li onclick="router(this)" id="artistas-link" class="links"><i class="fas fa-user-alt"></i> ARTISTAS</li>
-                            <li onclick="router(this)" id="albuns-link" class="links"><i class="fas fa-dot-circle"></i> ÁLBUNS</li>
-                            <li onclick="router(this)" id="musicas-link" class="links"><i class="fas fa-music"></i> MÚSICAS</li>
+                            <li onclick="router(this); toggleMenu()" id="playlists-link" class="links"><i class="fas fa-file-audio"></i> PLAYLISTS</li>
+                            <li onclick="router(this); toggleMenu()" id="artistas-link" class="links"><i class="fas fa-user-alt"></i> ARTISTAS</li>
+                            <li onclick="router(this); toggleMenu()" id="albuns-link" class="links"><i class="fas fa-dot-circle"></i> ÁLBUNS</li>
+                            <li onclick="router(this); toggleMenu()" id="musicas-link" class="links"><i class="fas fa-music"></i> MÚSICAS</li>
                         </ul>
                     </article>
     
@@ -69,6 +69,9 @@
                     <h1>ÁLBUNS</h1>
                     
                 </article>
+
+                <img id="capa" src="imagens/capa.jpg" alt="imagens de capa"/>
+
             </article>
         </section>
         <section class="bot-content">
