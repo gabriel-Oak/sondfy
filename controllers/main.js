@@ -8,6 +8,8 @@ let inPlaylist = false;
 let random = false;
 let progressBar = document.getElementById('progress-bar');
 let currentList = [];
+let pls = fetchPlaylistsData();
+let listaTracks;
 
 player.addEventListener('ended', playerEnd());
 
@@ -17,11 +19,13 @@ function remove(items){
     }
 }
 
- function unselect(items){
+function unselect(items){
     for(let i = 0; i < items.length; i++){
         items[i].classList.remove('active');
     }
 }
+
+
 
 function router(link){
     let containers = document.getElementsByClassName('secoes');
@@ -29,7 +33,7 @@ function router(link){
 
     unselect(links);
     remove(containers);
-    
+    console.log(link.id);
     if(link.id == 'musicas-link'){
         document.getElementById('container-musicas').classList.remove('offline');
         document.getElementById('musicas-link').classList.add('active');
@@ -120,6 +124,7 @@ function tocar(nome){
     if(nome < 0) return false;
     let htmlElements = document.getElementsByClassName('musica-active');
     deactive(htmlElements);
+    deactive(htmlElements);
 
     let htmlElement = document.getElementsByName(nome);
     active(htmlElement);
@@ -139,19 +144,30 @@ function tocar(nome){
 
 function playerEnd(){
     playing = false;
+    let i = 0;
+
     if(player.getAttribute('playing')){
 
         nome = parseInt(player.getAttribute('playing'));
 
         if( !player.loop && !random ) {
     
-            if( inPlaylist ) return console.log('proximo da playlist');
+            if( inPlaylist ) return listaTracks[0].tracks.map(musica => {
+                
+                if(musica == nome){
+                    if(listaTracks[0].tracks[i+1]) setTimeout(tocar(listaTracks[0].tracks[i+1]),1000);
+                    else setTimeout(tocar(listaTracks[0].tracks[0]),1000);
+                }
+                else i++;
+            });
             else if(musicas.filter(musica => musica.id == nome+1).length != 0) return setTimeout(tocar(++nome),1010);
             else return setTimeout(tocar(0),1000);
         
         } else if(random && !player.loop){
 
-            if(inPlaylist) return console.log('Item Aleatorio da playlist');
+            if(inPlaylist){
+                return setTimeout(tocar(listaTracks[0].tracks[Math.floor(Math.random() * parseFloat(listaTracks[0].tracks.length - 0.1))]),1010); 
+            } 
             else return setTimeout(tocar(Math.floor(Math.random() * parseFloat(musicas.length - 0.1))),1010);
 
         } else if(player.loop) return setTimeout(tocar(nome),1010);
@@ -224,7 +240,13 @@ function newPlaylist(){
     return document.getElementById('form-container-playlist').style.display = 'block';
 }
 
+function resetFomr(){
+    document.getElementById('input-name').value = '';
+    return currentList = [];
+}
+
 function canselarPlaylist(){
+    resetFomr();
     return document.getElementById('form-container-playlist').style.display = 'none';
 }
 
@@ -234,4 +256,39 @@ function addToPl(item){
     return console.log(currentList);
 }
 
+function salvarPl(req){
+    if(currentList.length > 0){
+        //req.titulo.value
+        let res = {
+            'title': req.titulo.value,
+            'tracks': currentList
+        }
+        localStorage.setItem(res.title, JSON.stringify(res));
+    }
+}
+
+function playP(playlist){
+    listaTracks = pls.filter(pl => playlist.getAttribute('name') == pl.title);
+    inPlaylist = true;
+    tocar(listaTracks[0].tracks[0]);
+    return(listaTracks);
+}
+
+function createPlaylists(data){
+    let container = document.getElementById('secao-de-playlist');
+    data.map(item => {
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        div.classList.add('playlist')
+        div.setAttribute('onclick','playP(this)');
+        div.setAttribute('name',item.title);
+        h1.innerText = item.title;
+        div.appendChild(h1);
+        container.appendChild(div);
+        
+    });
+}
+
+
+createPlaylists(pls);
 createLista(musicas);

@@ -52,6 +52,13 @@ const mjson = [
     }
 ];
 
+let playlistsData = [];
+
 function fetchMusicas(){
     return mjson;    
+}
+
+function fetchPlaylistsData(){
+    Object.keys(localStorage).map(item => playlistsData.push(JSON.parse(localStorage.getItem(item))));    
+    return playlistsData;
 }
