@@ -31,7 +31,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
 
 .offline{display:none!important;}
 
-.bot-content{background-color: #293e53; display: flex; flex-direction: row; width:100%;}
+.bot-content{background-color: #293e53; display: flex; flex-direction: row; width:100%; justify-content: center;}
     
     .arrow{ margin: auto 10px; }
     .loops{ margin: auto 10px; }
@@ -42,10 +42,11 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
     #progress-bar{ width: 0%; background-image: linear-gradient(to right, #f22293, #f22254); height: 100%; border-radius: 5px;     display: block; margin: auto auto auto 0;}
     #progress-captor{height: 5px; width: 100%; background-color: transparent; cursor: pointer; position: relative; top: -5px;}
     #tempo{margin: auto 10px}
-    #volume-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
-    #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
-    #volume{ margin: auto 10px auto auto;}
-    .main{display:flex; flex-direction:column;}
+    #volume:hover #volume-container{display: block;}
+    #volume-container{ background-color: white; height: 5px; border-radius: 5px; }
+    #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 100%; border-radius: 5px; display: block; margin: auto auto auto 0;}
+    
+.main{display:flex; flex-direction:column;}
 
 .form-container{display: none; position: fixed; top: 0; left: 0; background: rgba(255, 255, 255, 0.767); width: 100vw; height: 100vh; z-index: 3;}
     #form-playlist{background-color: #1d2d3c; position: relative; border-radius: 10px; overflow-y: auto;}
@@ -93,6 +94,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #progress-container{width: 35vw;}
         #tempo{display: none;}
         .fa-pause{font-size: 15px!important; position: relative; top: 2px;}
+        .fa.fa-caret-right{font-size: 30px!important; position: relative; }
 
         #form-playlist{height: 95vh; width: 95vw; top: 2.5vh; left: 2.5vw;}
 }
@@ -121,8 +123,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         .arrow{font-size: 15px;}
         .play{font-size: 20px; height: 30px!important; width: 30px!important; border-radius: 50px;}
         #progress-container{width: 35vw;}
-        .fa-caret-right{position: relative; left: 1px; top: 3px;}
-        .fa-pause{font-size: 15px!important; position: relative;}
+        .fa-caret-right{position: relative; left: 1px; top: 2px;}
+        .fa-pause{font-size: 15px!important; position: relative; top: -0.15px;}
 
     #form-playlist{height: 90vh; width: 60vw; top: 5vh; left: 20vw;}
 }
@@ -183,7 +185,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         .bot-content .musica-atual{margin: auto 20px auto 50px;}
         .arrow{font-size: 25px;}
         .play{font-size: 40px;}
-        .fa-caret-right{position: relative; left: 3px;}
+        .fa-caret-right{position: relative; left: 3px; top:-2px;}
         .fa-pause{font-size: 20px!important; top: -10px; position: relative;}
         #progress-container{width: 40vw;}
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
