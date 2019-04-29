@@ -7,6 +7,7 @@ let textoMusica = document.getElementById('musica-atual');
 let inPlaylist = false;
 let random = false;
 let progressBar = document.getElementById('progress-bar');
+let currentList = [];
 
 player.addEventListener('ended', playerEnd());
 
@@ -74,9 +75,10 @@ function conserta(){
 
 function createLista(dados){
     let lista = document.getElementById('lista-default');
+    let repositorio = document.getElementById('lista-playlist');
     if(dados.length > -1){
 
-        return dados.map(musica => {
+        dados.map(musica => {
             let item = document.createElement('li');
             item.classList.add('item-musica', musica.id);
             item.setAttribute('name',musica.id);
@@ -84,6 +86,15 @@ function createLista(dados){
             item.setAttribute('onclick','tocarMusica(this)')
             lista.appendChild(item);
         });
+
+        return dados.map(musica => {
+            let item = document.createElement('li');
+            item.classList.add('item-musica', musica.id);
+            item.setAttribute('name',musica.id);
+            item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
+            item.setAttribute('onclick','addToPl(this)');
+            repositorio.appendChild(item);
+        })
 
     }
 }
@@ -210,8 +221,17 @@ function next(){
 }
 
 function newPlaylist(){
-
+    return document.getElementById('form-container-playlist').style.display = 'block';
 }
 
+function canselarPlaylist(){
+    return document.getElementById('form-container-playlist').style.display = 'none';
+}
+
+function addToPl(item){
+    id = item.getAttribute('name');
+    if(currentList.filter(item => item == id) < 1) currentList.push(id); 
+    return console.log(currentList);
+}
 
 createLista(musicas);

@@ -1,6 +1,6 @@
 /*--RESET--*/
 *{margin: 0; top: 0; left: 0; font-size: 100%; outline: 0;}
-body{font-family: Arial, Helvetica, sans-serif; color: white;}
+body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden;}
 
 .botao{background-color: transparent; border: none; color: white; transition: color .5s; cursor: pointer;}
 .botao:hover{ color: #f22254;}
@@ -8,7 +8,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
 .active{color: #f22254;}
 .musica-active{color: #f22254;}
 
-.side-nav{background-color: #1d2d3c; animation: menuIn ease-out .4s 1; z-index: 1;}
+.side-nav{background-color: #1d2d3c; animation: menuIn ease-out .4s 1; z-index: 1; overflow-y: auto;}
     .side-nav li{ cursor: pointer; transition: color .5s; }
     .side-nav li:hover{ color: #f22254; }
     .menu-div #check{display: none;}
@@ -44,6 +44,14 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
     #volume{ margin: auto 10px auto auto;}
     .main{display:flex; flex-direction:column;}
+
+.form-container{position: fixed; top: 0; left: 0; background: rgba(255, 255, 255, 0.767); width: 100vw; height: 100vh; z-index: 3;}
+    #form-playlist{background-color: #1d2d3c; position: relative; border-radius: 10px; overflow-y: auto;}
+    #form-playlist form{padding: 20px; display: flex; flex-direction: column;}
+    form input{margin: 5px 0 10px 0; background-color: transparent; border-radius: 5px; border: 1px solid #fff; color:#fff; padding: 10px;}
+    form input:hover{border: 1px solid #f22293;}
+    form input:focus{border: 1px solid #f22254; color:#f22254;}
+    #form-playlist .cancelar-button{cursor: pointer; position: absolute; bottom: 10px; left: 10px; top: auto; height: 40px; color: white; background-color:#f22254; border: none; border-radius: 10px;}
 
 /*ANIMAÇÕES*/
 @keyframes menuOut {
@@ -83,6 +91,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         #progress-container{width: 35vw;}
         #tempo{display: none;}
         .fa-pause{font-size: 15px!important; position: relative; top: 2px;}
+
+        #form-playlist{height: 95vh; width: 95vw; top: 2.5vh; left: 2.5vw;}
 }
 
 
@@ -111,6 +121,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         #progress-container{width: 35vw;}
         .fa-caret-right{position: relative; left: 1px; top: 3px;}
         .fa-pause{font-size: 15px!important; position: relative;}
+
+    #form-playlist{height: 90vh; width: 60vw; top: 5vh; left: 20vw;}
 }
 
 /*--Not so big--*/
@@ -140,6 +152,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         #progress-container{width: 30vw;}
         .fa-caret-right{position: relative; left: 2px; top: 3px;}
         .fa-pause{font-size: 20px!important; top: -2px; position: relative;}
+
+    #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
 }
 
 
@@ -172,6 +186,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         #progress-container{width: 40vw;}
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
         #volume-bar{ width: 40%; }
+
+    #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
         
 }
 

@@ -100,6 +100,22 @@
                 <div id="volume-bar"></div>
             </div>
         </section>
+
+        <section class="form-container" id="form-container-playlist">
+            <div id="form-playlist">
+                <form action="">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" name="titulo" placeholder="Nome da sua playlist" required="true">
+                    <div style="overflow-y: auto">
+                        <ul id="lista-playlist">
+
+                        </ul>
+                    </div>
+                    
+                </form>
+                <button class="cancelar-button" onclick="canselarPlaylist()">Cancelar</button>
+            </div>
+        </section>
     </main>
 
     <script type="text/javascript" src="controllers/data.js"></script>
