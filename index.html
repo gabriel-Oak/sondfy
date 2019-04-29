@@ -90,6 +90,7 @@
             <button class="botao arrow" onclick="next()"><i class="fas fa-forward"></i></button>
             <div id="progress-container">
                 <div id="progress-bar"></div>
+                <div id="progress-captor"></div>
                 <audio src="" id="audio" onended="playerEnd()" ></audio>
             </div>
             <span id="tempo"></span>
@@ -103,7 +104,7 @@
 
         <section class="form-container" id="form-container-playlist">
             <div id="form-playlist">
-                <form onsubmit="salvarPl(this)">
+                <form action="#" onsubmit="salvarPl(this)">
                     <label for="titulo">Titulo</label>
                     <input type="text" name="titulo" id="input-name" placeholder="Nome da sua playlist" required="true">
                     <div style="overflow-y: auto; height: 60vh;">

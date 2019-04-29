@@ -13,6 +13,8 @@ let listaTracks;
 
 player.addEventListener('ended', playerEnd());
 
+
+
 function remove(items){
     for(let i = 0; i < items.length; i++){
         items[i].classList.add('offline');
@@ -209,6 +211,19 @@ function progresBar(){
         },1000);
     } 
 }
+
+document.getElementById('progress-captor').addEventListener('mousedown', (event) => {
+    let click = event.layerX;
+    let total = event.srcElement.clientWidth;
+    let percent = parseFloat(click/(total/100));
+    if(player.getAttribute('playing') != null){
+        let tempo = player.duration;
+        player.currentTime = tempo * (percent / 100);
+        if(!playing) pausePlay();
+        return percent;
+    }
+    return false;
+})
 
 function toggleRepeat(){
     

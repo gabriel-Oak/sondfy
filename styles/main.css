@@ -38,8 +38,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
     .play{background-color: #f22254; height: 40px; width: 40px; border-radius: 50px; margin: auto 0; transition: .5s; box-shadow: 0px 1px 2px black;}
         .play:hover{background-color: white; color: #f22254;}
         .play i{margin: auto;}
-    #progress-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
-    #progress-bar{ width: 0%; background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
+    #progress-container{ background-color: white; height: 5px; border-radius: 5px; margin: auto 0;}
+    #progress-bar{ width: 0%; background-image: linear-gradient(to right, #f22293, #f22254); height: 100%; border-radius: 5px;     display: block; margin: auto auto auto 0;}
+    #progress-captor{height: 5px; width: 100%; background-color: transparent; cursor: pointer; position: relative; top: -5px;}
     #tempo{margin: auto 10px}
     #volume-container{ background-color: white; height: 10px; border-radius: 5px; margin: auto 0;}
     #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 10px; border-radius: 5px;     display: block; margin: auto auto auto 0;}
