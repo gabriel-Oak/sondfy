@@ -174,8 +174,10 @@ function progresBar(){
             let total = player.duration;
             let current = player.currentTime;
             let percent = parseFloat(current/(total/100));
+            let min = parseInt((player.duration - player.currentTime) % 60);
+            if(min < 10) min = '0' + min;
             progressBar.style.width = percent+'%';
-            tempo.innerText = '-' + parseInt((player.duration - player.currentTime) / 60) + ':' + parseInt((player.duration - player.currentTime) % 60)
+            tempo.innerText = '-' + parseInt((player.duration - player.currentTime) / 60) + ':' + min;
             progresBar(parseInt(player.currentTime));
         },1000);
     } 
@@ -207,6 +209,9 @@ function next(){
     return playerEnd();
 }
 
+function newPlaylist(){
+
+}
 
 
 createLista(musicas);

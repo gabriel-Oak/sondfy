@@ -24,6 +24,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     .item-musica{cursor: pointer; transition: color .5s; line-height: 20px; font-size: 20px;}
     .item-musica:hover {color: #f22293;}
     #capa {position: absolute; z-index: -1;}
+    .playlist{border: dashed 5px white; border-radius: 5px; text-align: center;}
+    .playlist h1{ font-size: 1.5em!important;}
+    .playlist p {font-size: 1em; cursor: pointer; vertical-align: middle; margin: auto; position: relative; top: 20%; bottom: auto;}
     
 .offline{display:none!important;}
 
@@ -69,6 +72,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
         /*Conteudo*/
     .content{height: 100%; width: 100vw;}
         #capa{ width: 90vw; top: 40%; right: 5vw; left: auto;}
+        .content section{display: flex; flex-direction: column; justify-content: space-around;}
     
     /*Player*/
     .bot-content{height: 8vh; position: fixed; top:92vh;}
@@ -97,6 +101,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
        /*Conteudo*/
    .content{height: 100%; width: 100vw;}
         #capa{ width: 90vw; top: 40%; right: 5vw; left: auto;}
+        .content section{display: flex; flex-direction: column; justify-content: space-around;}
    
    /*Player*/
    .bot-content{height: 8vh; position: fixed; top: 92vh; left: 0;}
@@ -121,9 +126,11 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
        .menu-div{ display: none; }
        
        /*Conteudo*/
-   .content{height: 100%; width: 80vw; overflow-y: auto;}
+   .content{height: 100%; width: 80vw; overflow-y: auto; overflow-x: hidden;}
         .content article{width: 95%;}
         #capa{ width: 75vw; top: auto; bottom: 12vh; right: 2.5vw; left: auto;}
+        .content section{display: flex; flex-direction: row; justify-content: space-around;}
+        .playlist{width: 20%; height: 150px;}
 
    /*Player*/
    .bot-content{height: 10vh;}
@@ -151,6 +158,8 @@ body{font-family: Arial, Helvetica, sans-serif; color: white;}
     .content{height: 100%; width: 80vw; overflow-y: auto;}
         .content article{width: 95%;}
         #capa{ width: 40vw; top: auto; bottom: 16vh; right: 20vw; left: auto;}
+        .content section{display: flex; flex-direction: row; justify-content: space-around;}
+        .playlist{width: 20%; height: 100px;}
 
 
     /*Player*/
