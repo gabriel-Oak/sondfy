@@ -25,7 +25,7 @@ function unselect(items){
     for(let i = 0; i < items.length; i++){
         items[i].classList.remove('active');
     }
-}
+} 
 
 
 
