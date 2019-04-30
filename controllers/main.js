@@ -310,10 +310,21 @@ function salvarPl(req){
     }
 }
 
+function removePls(items){
+    for(i = 0; i < items.length; i++){
+        items[i].classList.remove('playlist-active');
+    }
+    return items;
+}
+
 function playP(playlist){
+    let ps = document.getElementsByClassName('thumbnail');
+    removePls(ps);
+
     listaTracks = pls.filter(pl => playlist.getAttribute('name') == pl.title);
     inPlaylist = true;
     tocar(listaTracks[0].tracks[0]);
+    playlist.classList.add('playlist-active');
     return(listaTracks);
 }
 
@@ -322,11 +333,14 @@ function createPlaylists(data){
     data.map(item => {
         let div = document.createElement('div');
         let h1 = document.createElement('h1');
-        div.classList.add('playlist')
+        let img = document.createElement('img');
+        img.src = musicas[item.tracks[0]].img
+        div.classList.add('playlist', 'thumbnail')
         div.setAttribute('onclick','playP(this)');
         div.setAttribute('name',item.title);
         h1.innerText = item.title;
         div.appendChild(h1);
+        div.appendChild(img);
         container.appendChild(div);
         
     });

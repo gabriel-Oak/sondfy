@@ -9,7 +9,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
 
 .active{color: #f22254;}
 .musica-active{color: #f22254;}
-
+.playlist-active{box-shadow: 0px 0px 18px #f22254;}
 .top-content{display: flex; flex-direction: row;}
 
 .side-nav{ background-color: #1d2d3c; animation: menuIn ease-out .4s 1; z-index: 1; overflow-y: auto; }
@@ -27,10 +27,14 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
     .lista li{line-height: 35px;}
     .item-musica{cursor: pointer; transition: color .5s; line-height: 20px; font-size: 20px;}
     #capa {position: absolute; z-index: -1; border-radius: 8px;}
-    .playlist{border: dashed 5px white; border-radius: 5px; text-align: center; cursor:pointer; margin-top: 20px;}
+    .playlist{position: relative; border: dashed 5px white; border-radius: 5px; text-align: center; cursor:pointer; margin-top: 20px;}
     .playlist h1{ font-size: 1.5em!important;}
     .playlist p {font-size: 1em; cursor: pointer; vertical-align: middle; margin: auto; position: relative; top: 20%; bottom: auto;}
-    
+    .thumbnail{border: none!important; transition: box-shadow .5s;}
+    .thumbnail img{ object-fit: cover; height: 100%; width: 100%; }
+    .thumbnail h1{ padding: 5px 0; position: absolute; width: 100%; background-color: rgba(44, 44, 44, .6); outline: 5px linear rgba(44, 44, 44, .6); }
+    .thumbnail:hover{ box-shadow: 0px 0px 18px #fff; }
+
 
 .offline{display:none!important;}
 
@@ -87,7 +91,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         /*Conteudo*/
     .content{ width: 100vw; }
         #capa{ width: 90vw; height: 90vh; top: 6%; right: 5vw; left: auto; object-fit: cover; }
-        .content section{display: flex; flex-direction: column; justify-content: space-around;}
+        .content section{display: flex; flex-direction: column; justify-content: space-around; flex-wrap: wrap;}
     
     /*Player*/
     .bot-content{height: 8vh; position: fixed; top:92vh;}
@@ -130,7 +134,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
        /*Conteudo*/
    .content{ width: 100vw; }
         #capa{ width: 90vw; top: 10%; right: 5vw; left: auto;}
-        .content section{display: flex; flex-direction: column; justify-content: space-around;}
+        .content section{display: flex; flex-direction: column; justify-content: space-around; flex-wrap: wrap;}
    
    /*Player*/
    .bot-content{height: 8vh; position: fixed; top: 92vh; left: 0;}
@@ -171,8 +175,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
    .content{ width: 80vw; }
         .content article{width: 95%;}
         #capa{ width: 75vw; top: auto; bottom: 12vh; right: 2.5vw; left: auto;}
-        .content section{display: flex; flex-direction: row; justify-content: space-around;}
-        .playlist{width: 20%; height: 150px;}
+        .content section{display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;}
+        .playlist{width: 30%; height: auto;}
+        .playlist:not(.thumbnail) h1{ position: relative; top: 55%; }
 
    /*Player*/
    .bot-content{height: 10vh;}
@@ -213,8 +218,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
     .content{width: 80vw; }
         .content article{width: 95%;}
         #capa{ width: 40vw; top: auto; bottom: 16vh; right: 20vw; left: auto;}
-        .content section{display: flex; flex-direction: row; justify-content: space-around;}
-        .playlist{width: 20%; height: 100px;}
+        .content section{display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;}
+        .playlist{width: 30%; height: auto;}
+        .playlist:not(.thumbnail) h1{ position: relative; top: 50%; }
 
 
     /*Player*/
