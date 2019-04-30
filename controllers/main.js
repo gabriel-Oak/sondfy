@@ -185,19 +185,21 @@ function playerEnd(){
 }
 
 function pausePlay(){
-    if(playing){
+    if(player.getAttribute('playing')){
+        if(playing){
         
-        playing = false;
-        iconePlayer.classList.replace('fa-pause','fa-caret-right');
-        return player.pause();
-
-    } else{
-
-        playing = true;
-        iconePlayer.classList.replace('fa-caret-right','fa-pause');
-        progresBar();
-        return player.play();
-
+            playing = false;
+            iconePlayer.classList.replace('fa-pause','fa-caret-right');
+            return player.pause();
+    
+        } else{
+    
+            playing = true;
+            iconePlayer.classList.replace('fa-caret-right','fa-pause');
+            progresBar();
+            return player.play();
+    
+        }
     }
 }
 

@@ -3,11 +3,21 @@ const testeInit = () => {
 
     
     const removeT = () => {
-        console.log('Remoção de Containers da tela');
-        let input = document.getElementsByClassName('secoes');
+        console.log('Testando remove()');
+        
+        //Gerando elementos do teste
+        let input = [];
+        for(i = 0; i < 5; i++){
+            let item = document.createElement('article');
+            item.classList.add('secoes');
+            input.push(item);
+        }
+
+        //Efetuando teste
         let output = remove(input);
-        for(i = 0; i< output.lenght; i++){
-            if(output[i].classList.lenght != 2){
+
+        for(i = 0; i < output.length; i++){
+            if(!output[i].classList.contains('offline')){
                 return console.log('remove() Não passou no teste!');
             }
         }
