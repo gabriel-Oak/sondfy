@@ -19,12 +19,14 @@ function remove(items){
     for(let i = 0; i < items.length; i++){
         items[i].classList.add('offline');
     }
+    return items;
 }
 
 function unselect(items){
     for(let i = 0; i < items.length; i++){
         items[i].classList.remove('active');
     }
+    return items;
 } 
 
 
@@ -76,6 +78,10 @@ function conserta(){
         menu.style.display = 'block';
         menu.classList.replace('no-nav', 'side-nav');
 
+    }
+    if( window.innerWidth > 1199){
+        let volume = document.getElementById('volume-container');
+        volume.style.display = 'block';
     }
 }
 
@@ -243,6 +249,27 @@ function toggleRandom(){
 
 }
 
+function toggleVolume(){
+    let volume = document.getElementById('volume-container');
+    if(window.innerWidth < 1200){
+        if(volume.style.display == 'none' || volume.style.display == '') return volume.style.display = 'block';
+        else return volume.style.display = 'none'
+    } 
+    return false;
+}
+
+document.getElementById('volume-captor').addEventListener('mousedown', (event) => {
+    let click = event.layerX;
+    let total = event.srcElement.clientWidth;
+    let percent = parseFloat(click/(total/100));
+    let volume = player.volume;
+    player.volume = 1 * (percent / 100);
+    document.getElementById('volume-bar').style.width = percent + '%';
+    console.log(volume);
+    return player.volume;
+    
+});
+
 function prev(){
     if(player.getAttribute('playing')) return tocar(parseInt(player.getAttribute('playing')-1));
 }
@@ -273,7 +300,6 @@ function addToPl(item){
 
 function salvarPl(req){
     if(currentList.length > 0){
-        //req.titulo.value
         let res = {
             'title': req.titulo.value,
             'tracks': currentList

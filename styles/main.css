@@ -40,12 +40,13 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         .play i{margin: auto;}
     #progress-container{ background-color: white; height: 5px; border-radius: 5px; margin: auto 0;}
     #progress-bar{ width: 0%; background-image: linear-gradient(to right, #f22293, #f22254); height: 100%; border-radius: 5px;     display: block; margin: auto auto auto 0;}
-    #progress-captor{height: 5px; width: 100%; background-color: transparent; cursor: pointer; position: relative; top: -5px;}
+    #progress-captor{height: 15px; width: 100%; background-color: transparent; cursor: pointer; position: relative; top: -10px;}
     #tempo{margin: auto 10px}
     #volume:hover #volume-container{display: block;}
     #volume-container{ background-color: white; height: 5px; border-radius: 5px; }
     #volume-bar{ background-image: linear-gradient(to right, #f22293, #f22254); height: 100%; border-radius: 5px; display: block; margin: auto auto auto 0;}
-    
+    #volume-captor{cursor: pointer; height: 15px; position: relative; width: 100%; top: -10px;}
+
 .main{display:flex; flex-direction:column;}
 
 .form-container{display: none; position: fixed; top: 0; left: 0; background: rgba(255, 255, 255, 0.767); width: 100vw; height: 100vh; z-index: 3;}
@@ -95,6 +96,19 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #tempo{display: none;}
         .fa-pause{font-size: 15px!important; position: relative; top: 2px;}
         .fa.fa-caret-right{font-size: 30px!important; position: relative; }
+        #volume-container{
+            width: 150px!important; 
+            margin: auto 5px!important; 
+            transform: rotate(-90deg);
+            position: absolute;
+            z-index: 1;
+            bottom: 143px;
+            top: auto;
+            right: auto;
+            left: 66vw;
+            outline: 10px solid #293e53;
+            display: none;
+        }
 
         #form-playlist{height: 95vh; width: 95vw; top: 2.5vh; left: 2.5vw;}
 }
@@ -125,6 +139,19 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #progress-container{width: 35vw;}
         .fa-caret-right{position: relative; left: 1px; top: 2px;}
         .fa-pause{font-size: 15px!important; position: relative; top: -0.15px;}
+        #volume-container{
+            width: 150px!important; 
+            margin: auto 5px!important; 
+            transform: rotate(-90deg);
+            position: absolute;
+            z-index: 1;
+            bottom: 143px;
+            top: auto;
+            right: auto;
+            left: 74vw;
+            outline: 10px solid #293e53;
+            display: none;
+        }
 
     #form-playlist{height: 90vh; width: 60vw; top: 5vh; left: 20vw;}
 }
@@ -156,6 +183,19 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #progress-container{width: 30vw;}
         .fa-caret-right{position: relative; left: 2px; top: 3px;}
         .fa-pause{font-size: 20px!important; top: -2px; position: relative;}
+        #volume-container{
+            width: 150px!important; 
+            margin: auto 5px!important; 
+            transform: rotate(-90deg);
+            position: absolute;
+            z-index: 1;
+            bottom: 135px;
+            top: auto;
+            right: auto;
+            left: 81vw;
+            outline: 10px solid #293e53;
+            display: none;
+        }
 
     #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
 }
@@ -189,7 +229,6 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         .fa-pause{font-size: 20px!important; top: -10px; position: relative;}
         #progress-container{width: 40vw;}
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
-        #volume-bar{ width: 40%; }
 
     #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
         
