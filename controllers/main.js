@@ -37,7 +37,7 @@ function router(link){
 
     unselect(links);
     remove(containers);
-    console.log(link.id);
+
     if(link.id == 'musicas-link'){
         document.getElementById('container-musicas').classList.remove('offline');
         document.getElementById('musicas-link').classList.add('active');
@@ -92,7 +92,7 @@ function createLista(dados){
 
         dados.map(musica => {
             let item = document.createElement('li');
-            item.classList.add('item-musica', musica.id);
+            item.classList.add('item-musica', musica.id, 'color-pink-purple');
             item.setAttribute('name',musica.id);
             item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
             item.setAttribute('onclick','tocarMusica(this)')
@@ -101,7 +101,7 @@ function createLista(dados){
 
         return dados.map(musica => {
             let item = document.createElement('li');
-            item.classList.add('item-musica', musica.id);
+            item.classList.add('item-musica', musica.id, 'color-pink-purple');
             item.setAttribute('name',musica.id);
             item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
             item.setAttribute('onclick','addToPl(this)');
@@ -265,7 +265,7 @@ document.getElementById('volume-captor').addEventListener('mousedown', (event) =
     let volume = player.volume;
     player.volume = 1 * (percent / 100);
     document.getElementById('volume-bar').style.width = percent + '%';
-    console.log(volume);
+
     return player.volume;
     
 });
@@ -295,7 +295,7 @@ function canselarPlaylist(){
 function addToPl(item){
     id = item.getAttribute('name');
     if(currentList.filter(item => item == id) < 1) currentList.push(id); 
-    return console.log(currentList);
+    return currentList;
 }
 
 function salvarPl(req){

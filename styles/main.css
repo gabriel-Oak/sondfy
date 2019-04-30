@@ -2,28 +2,31 @@
 *{margin: 0; top: 0; left: 0; font-size: 100%; outline: 0;}
 body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden;}
 
+.color-pink-red:hover{ color: #f22254; }
+.color-pink-purple:hover{ color: #f22293; }
+
 .botao{background-color: transparent; border: none; color: white; transition: color .5s; cursor: pointer;}
-.botao:hover{ color: #f22254;}
 
 .active{color: #f22254;}
 .musica-active{color: #f22254;}
 
-.side-nav{background-color: #1d2d3c; animation: menuIn ease-out .4s 1; z-index: 1; overflow-y: auto;}
+.top-content{display: flex; flex-direction: row;}
+
+.side-nav{ background-color: #1d2d3c; animation: menuIn ease-out .4s 1; z-index: 1; overflow-y: auto; }
+    .side-nav h2{ margin: 20px auto 20px 20px}
+    .side-nav ul{ list-style: none; margin: 0 auto 20px -10px; }
     .side-nav li{ cursor: pointer; transition: color .5s; }
-    .side-nav li:hover{ color: #f22254; }
     .menu-div #check{display: none;}
-    .menu-div #botaoM{ position: fixed; z-index: 2; top: 15px; left: 15px; cursor: pointer; transition: color .5s;}
-    .menu-div #botaoM:hover{ color: #f22254;}
+    .menu-div #botaoM{ font-size: 1.5em; position: fixed; z-index: 2; top: 15px; left: 15px; cursor: pointer; transition: color .5s;}
     .no-nav{animation: menuOut ease-out .4s 1;}
 
-.content{z-index: 0; background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 60vh;}
+.content{z-index: 0; background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 100%; overflow-y: auto; overflow-x: hidden;}
     .content article{box-shadow: 0px 1px 2px #333; padding: 16px; background-color: rgba(44, 44, 44, .6); border-radius: 5px; margin: 10px auto;}
     .content h1{text-align: center; font-size: 40px;}
     .lista{ list-style: none;}
     .lista li{line-height: 35px;}
     .item-musica{cursor: pointer; transition: color .5s; line-height: 20px; font-size: 20px;}
-    .item-musica:hover {color: #f22293;}
-    #capa {position: absolute; z-index: -1;}
+    #capa {position: absolute; z-index: -1; border-radius: 8px;}
     .playlist{border: dashed 5px white; border-radius: 5px; text-align: center; cursor:pointer; margin-top: 20px;}
     .playlist h1{ font-size: 1.5em!important;}
     .playlist p {font-size: 1em; cursor: pointer; vertical-align: middle; margin: auto; position: relative; top: 20%; bottom: auto;}
@@ -74,16 +77,16 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
 @media screen and (max-width: 479px){
     /*Corpo*/
     
-    .top-content{display: flex; flex-direction: row; height: 100vh; margin-bottom: 8vh;}
+    .top-content{height: 100vh; margin-bottom: 8vh;}
+    
     /*MENU*/
     .side-nav{width: 80vw; position: fixed; min-height: 100vh; margin-bottom: 8vh;}
      .side-nav article{ margin: 50px auto 0 auto;}
-     .side-nav h2{ margin: 20px auto 20px 10%}
-     .side-nav ul{list-style: none; line-height: 40px; margin: 0 auto 20px -5%;}
+     .side-nav ul{ line-height: 40px; }
     
         /*Conteudo*/
-    .content{height: 100%; width: 100vw;}
-        #capa{ width: 90vw; top: 40%; right: 5vw; left: auto;}
+    .content{ width: 100vw; }
+        #capa{ width: 90vw; height: 90vh; top: 6%; right: 5vw; left: auto; object-fit: cover; }
         .content section{display: flex; flex-direction: column; justify-content: space-around;}
     
     /*Player*/
@@ -99,13 +102,12 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #volume-container{
             width: 150px!important; 
             margin: auto 5px!important; 
-            transform: rotate(-90deg);
             position: absolute;
             z-index: 1;
-            bottom: 143px;
+            bottom: 9vh;
             top: auto;
-            right: auto;
-            left: 66vw;
+            right: 0;
+            left: auto;
             outline: 10px solid #293e53;
             display: none;
         }
@@ -119,16 +121,15 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
 @media screen and (min-width: 480px) and (max-width: 767px){
    /*Corpo*/
     
-   .top-content{display: flex; flex-direction: row; height: 100vh; margin-bottom: 8vh;}
+   .top-content{ height: 100vh; margin-bottom: 8vh;}
    /*MENU*/
    .side-nav{width: 50vw; position: fixed; min-height: 100vh; margin-bottom: 8vh;}
     .side-nav article{ margin: 50px auto 0 auto;}
-    .side-nav h2{ margin: 20px auto 20px 10%}
-    .side-nav ul{list-style: none; line-height: 40px; margin: 0 auto 20px -5%;}
+    .side-nav ul{ line-height: 40px; }
    
        /*Conteudo*/
-   .content{height: 100%; width: 100vw;}
-        #capa{ width: 90vw; top: 40%; right: 5vw; left: auto;}
+   .content{ width: 100vw; }
+        #capa{ width: 90vw; top: 10%; right: 5vw; left: auto;}
         .content section{display: flex; flex-direction: column; justify-content: space-around;}
    
    /*Player*/
@@ -142,13 +143,12 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #volume-container{
             width: 150px!important; 
             margin: auto 5px!important; 
-            transform: rotate(-90deg);
             position: absolute;
             z-index: 1;
-            bottom: 143px;
+            bottom: 9vh;
             top: auto;
-            right: auto;
-            left: 74vw;
+            right: 0;
+            left: auto;
             outline: 10px solid #293e53;
             display: none;
         }
@@ -161,15 +161,14 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
    /*Corpo*/
    
     
-   .top-content{display: flex; flex-direction: row; height: 90vh;}
+   .top-content{ height: 90vh;}
    /*MENU*/
    .side-nav{width: 20vw;}
-   .side-nav h2{ margin: 20px auto 20px 10%}
-       .side-nav ul{list-style: none; line-height: 40px; margin: 0 auto 20px -5%;}
+       .side-nav ul{line-height: 40px;}
        .menu-div{ display: none; }
        
        /*Conteudo*/
-   .content{height: 100%; width: 80vw; overflow-y: auto; overflow-x: hidden;}
+   .content{ width: 80vw; }
         .content article{width: 95%;}
         #capa{ width: 75vw; top: auto; bottom: 12vh; right: 2.5vw; left: auto;}
         .content section{display: flex; flex-direction: row; justify-content: space-around;}
@@ -186,13 +185,12 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #volume-container{
             width: 150px!important; 
             margin: auto 5px!important; 
-            transform: rotate(-90deg);
             position: absolute;
             z-index: 1;
-            bottom: 135px;
+            bottom: 10vh;
             top: auto;
-            right: auto;
-            left: 81vw;
+            right: 0;
+            left: auto;
             outline: 10px solid #293e53;
             display: none;
         }
@@ -205,15 +203,14 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
 @media screen and (min-width: 1200px){
     /*Corpo*/
     
-    .top-content{display: flex; flex-direction: row; height: 90vh;}
+    .top-content{ height: 90vh;}
     /*MENU*/
     .side-nav{width: 20vw;}
-    .side-nav h2{ margin: 20px auto 20px 10%}
-        .side-nav ul{list-style: none; line-height: 50px; margin: 0 auto 20px -5%;}
+        .side-nav ul{ line-height: 50px; }
         .menu-div{ display: none; }
     
         /*Conteudo*/
-    .content{height: 100%; width: 80vw; overflow-y: auto;}
+    .content{width: 80vw; }
         .content article{width: 95%;}
         #capa{ width: 40vw; top: auto; bottom: 16vh; right: 20vw; left: auto;}
         .content section{display: flex; flex-direction: row; justify-content: space-around;}
