@@ -219,7 +219,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         /*Conteudo*/
     .content{width: 80vw; }
         .content article{width: 95%;}
-        #capa{ width: 40vw; top: auto; bottom: 16vh; right: 20vw; left: auto;}
+        #capa{ width: 60vw; top: auto; bottom: 11vh; right: 10vw; left: auto;}
         .content section{display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;}
         .playlist{width: 30%; height: auto;}
         

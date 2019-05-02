@@ -23,7 +23,7 @@ function remove(items){
         items[i].classList.add('offline');
     }
     return items;
-}
+} 
 
 function unselect(items){
     for(let i = 0; i < items.length; i++){
@@ -69,19 +69,22 @@ function conserta(){
 
 function tocarMusica(item){
     inPlaylist = false;
-    return tocar(item.getAttribute('name'));
+    tocar(item.getAttribute('name'));
+    return item.getAttribute('name');
 }
 
 function deactive(elements){
     for(let i = 0; i < elements.length; i++){
         elements[i].classList.remove('musica-active');
     }
+    return elements;
 }
 
 function active(elements){
     for(let i = 0; i < elements.length; i++){
         elements[i].classList.add('musica-active');
     }
+    return elements;
 }
 
 function tocar(nome){
@@ -171,7 +174,7 @@ function progresBar(){
             if(min < 10) min = '0' + min;
             progressBar.style.width = percent+'%';
             tempo.innerText = '-' + parseInt((player.duration - player.currentTime) / 60) + ':' + min;
-            progresBar(parseInt(player.currentTime));
+            progresBar();
         },1000);
     } 
 }

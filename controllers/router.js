@@ -68,7 +68,6 @@ function createPlaylists(data){
 function createArtistas(data){
     let container = document.getElementById('secao-de-artistas');
     data.map(item =>{
-        console.log(item);
         let div = document.createElement('div');
         let h1 = document.createElement('h1');
         let img = document.createElement('img');
@@ -86,7 +85,6 @@ function createArtistas(data){
 function createAlbuns(data){
     let container = document.getElementById('secao-de-albuns');
     data.map(item =>{
-        console.log(item);
         let div = document.createElement('div');
         let h1 = document.createElement('h1');
         let img = document.createElement('img');
@@ -158,7 +156,6 @@ function playArt(artista){
         listaTracks[0].tracks.push(item.id);
     });
     inPlaylist = true;
-    console.log(listaTracks);
     tocar(listaTracks[0].tracks[0]);
     artista.classList.add('playlist-active');
     return(listaTracks);
@@ -173,7 +170,6 @@ function playAlb(album){
         listaTracks[0].tracks.push(item.id);
     });
     inPlaylist = true;
-    console.log(listaTracks);
     tocar(listaTracks[0].tracks[0]);
     album.classList.add('playlist-active');
     return(listaTracks);
