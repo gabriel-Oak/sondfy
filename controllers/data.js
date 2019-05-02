@@ -2,7 +2,7 @@ const mjson = [
     {   "id":"0",
         "nome":"Stairway To Heaven",
         "artista":"Led Zepelin",
-        "album":"",
+        "album":"Coletania Sondfy",
         "url":"audios/stairway-to-heaven.mp3",
         "img":"imagens/stairway.jpg"
     },
@@ -16,21 +16,21 @@ const mjson = [
     {   "id":"2",
         "artista":"Henrique e Juliano",
         "nome":"Metade Da Estrada",
-        "album":"",
+        "album":"Coletania Sondfy",
         "url":"audios/metade-da-estrada.mp3",
         "img":"imagens/metade.jpg"
     },
     {   "id":"3",
         "nome":"Era Uma Vez",
         "artista":"Kell Smith",
-        "album":"",
+        "album":"Coletania Sondfy",
         "url":"audios/era-uma-vez.mp3",
         "img":"imagens/era-uma-vez.jpg"
     },
     {   "id":"4",
         "nome":"Dancing With a Stranger",
         "artista":"Sam Smith",
-        "album":"",
+        "album":"Coletania Sondfy",
         "url":"audios/Dancing.mp3",
         "img":"imagens/stranger.jpg"
     },
@@ -38,7 +38,7 @@ const mjson = [
         "id":"5",
         "nome":"Trem Bala",
         "artista":"Ana Vilela",
-        "album":"",
+        "album":"Coletania Sondfy",
         "url":"audios/trem-bala.mp3",
         "img":"imagens/trem-bala.jpg"
     },
@@ -46,8 +46,50 @@ const mjson = [
         "id":"6",
         "nome":"Um Milhão de Vezes",
         "artista":"Rafinha Acústico",
-        "album":"",
+        "album":"Acusticos",
         "url":"audios/um-milhao-de-vezes.mp3",
+        "img":"imagens/um-milhao-de-vezes.jpg"
+    }
+];
+
+const ajson = [
+    {
+        "nome":"Led Zepelin",
+        "img":"imagens/stairway.jpg"
+    },
+    {
+        "nome":"Gustavo Mioto",
+        "img":"imagens/relogio.jpg"
+    },
+    {
+        "nome":"Henrique e Juliano",
+        "img":"imagens/metade.jpg"
+    },
+    {
+        "nome":"Kell Smith",
+        "img":"imagens/era-uma-vez.jpg"
+    },
+    {
+        "nome":"Sam Smith",
+        "img":"imagens/stranger.jpg"
+    },
+    {
+        "nome":"Ana Vilela",
+        "img":"imagens/trem-bala.jpg"
+    },
+    {
+        "nome":"Rafinha Acústico",
+        "img":"imagens/um-milhao-de-vezes.jpg"
+    }
+];
+
+const aljson = [
+    {
+        "nome":"Coletania Sondfy",
+        "img":"imagens/capa.jpg"
+    },
+    {
+        "nome":"Acusticos",
         "img":"imagens/um-milhao-de-vezes.jpg"
     }
 ];
@@ -61,4 +103,12 @@ function fetchMusicas(){
 function fetchPlaylistsData(){
     Object.keys(localStorage).map(item => playlistsData.push(JSON.parse(localStorage.getItem(item))));    
     return playlistsData;
+}
+
+function fetchArtistas(){
+    return ajson;
+}
+
+function fetchAlbuns(){
+    return aljson;
 }

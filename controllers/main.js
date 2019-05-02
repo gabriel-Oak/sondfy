@@ -1,5 +1,8 @@
 
 let musicas = fetchMusicas();
+let pls = fetchPlaylistsData();
+let artistas = fetchArtistas();
+let albuns = fetchAlbuns();
 let player = document.getElementById('audio');
 let playing = false;
 let iconePlayer = document.getElementById('icone-play');
@@ -8,8 +11,8 @@ let inPlaylist = false;
 let random = false;
 let progressBar = document.getElementById('progress-bar');
 let currentList = [];
-let pls = fetchPlaylistsData();
 let listaTracks;
+
 
 player.addEventListener('ended', playerEnd());
 
@@ -109,6 +112,60 @@ function createLista(dados){
         })
 
     }
+}
+
+function createPlaylists(data){
+    let container = document.getElementById('secao-de-playlist');
+    data.map(item => {
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        let img = document.createElement('img');
+        img.src = musicas[item.tracks[0]].img
+        div.classList.add('playlist', 'thumbnail');
+        div.setAttribute('onclick','playP(this)');
+        div.setAttribute('name',item.title);
+        h1.innerText = item.title;
+        div.appendChild(h1);
+        div.appendChild(img);
+        container.appendChild(div);
+        
+    });
+}
+
+function createArtistas(data){
+    let container = document.getElementById('secao-de-artistas');
+    data.map(item =>{
+        console.log(item);
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        let img = document.createElement('img');
+        img.src = item.img;
+        div.classList.add('playlist', 'thumbnail');
+        div.setAttribute('onclick','playArt(this)');
+        div.setAttribute('name',item.nome);
+        h1.innerText = item.nome;
+        div.appendChild(h1);
+        div.appendChild(img);
+        container.appendChild(div);
+    });
+}
+
+function createAlbuns(data){
+    let container = document.getElementById('secao-de-albuns');
+    data.map(item =>{
+        console.log(item);
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        let img = document.createElement('img');
+        img.src = item.img;
+        div.classList.add('playlist', 'thumbnail');
+        div.setAttribute('onclick','playAlb(this)');
+        div.setAttribute('name',item.nome);
+        h1.innerText = item.nome;
+        div.appendChild(h1);
+        div.appendChild(img);
+        container.appendChild(div);
+    });
 }
 
 function tocarMusica(item){
@@ -328,24 +385,37 @@ function playP(playlist){
     return(listaTracks);
 }
 
-function createPlaylists(data){
-    let container = document.getElementById('secao-de-playlist');
-    data.map(item => {
-        let div = document.createElement('div');
-        let h1 = document.createElement('h1');
-        let img = document.createElement('img');
-        img.src = musicas[item.tracks[0]].img
-        div.classList.add('playlist', 'thumbnail')
-        div.setAttribute('onclick','playP(this)');
-        div.setAttribute('name',item.title);
-        h1.innerText = item.title;
-        div.appendChild(h1);
-        div.appendChild(img);
-        container.appendChild(div);
-        
+function playArt(artista){
+    let ps = document.getElementsByClassName('thumbnail');
+    removePls(ps);
+    tracks = [];
+    listaTracks = [{tracks}];
+    musicas.filter(musica => musica.artista === artista.getAttribute('name')).map(item => {
+        listaTracks[0].tracks.push(item.id);
     });
+    inPlaylist = true;
+    console.log(listaTracks);
+    tocar(listaTracks[0].tracks[0]);
+    artista.classList.add('playlist-active');
+    return(listaTracks);
 }
 
+function playAlb(album){
+    let ps = document.getElementsByClassName('thumbnail');
+    removePls(ps);
+    tracks = [];
+    listaTracks = [{tracks}];
+    musicas.filter(musica => musica.album === album.getAttribute('name')).map(item => {
+        listaTracks[0].tracks.push(item.id);
+    });
+    inPlaylist = true;
+    console.log(listaTracks);
+    tocar(listaTracks[0].tracks[0]);
+    album.classList.add('playlist-active');
+    return(listaTracks);
+}
 
+createAlbuns(albuns);
+createArtistas(artistas);
 createPlaylists(pls);
 createLista(musicas);
