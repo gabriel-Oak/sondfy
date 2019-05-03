@@ -48,6 +48,7 @@ function createLista(dados){
 }
 
 function createPlaylists(data){
+    
     let container = document.getElementById('secao-de-playlist');
     data.map(item => {
         let div = document.createElement('div');
@@ -57,7 +58,7 @@ function createPlaylists(data){
         div.classList.add('playlist', 'thumbnail');
         div.setAttribute('onclick','playP(this)');
         div.setAttribute('name',item.title);
-        h1.innerText = item.title;
+        h1.innerText = item.title.replace('▒','');
         div.appendChild(h1);
         div.appendChild(img);
         container.appendChild(div);
@@ -122,7 +123,7 @@ function addToPl(item){
 function salvarPl(req){
     if(currentList.length > 0){
         let res = {
-            'title': req.titulo.value,
+            'title': '▒'+req.titulo.value,
             'tracks': currentList
         }
         localStorage.setItem(res.title, JSON.stringify(res));

@@ -101,7 +101,7 @@ function fetchMusicas(){
 }
 
 function fetchPlaylistsData(){
-    Object.keys(localStorage).map(item => playlistsData.push(JSON.parse(localStorage.getItem(item))));    
+    Object.keys(localStorage).map(item =>{ if(item[0] == '▒')playlistsData.push(JSON.parse(localStorage.getItem(item)))});    
     return playlistsData;
 }
 

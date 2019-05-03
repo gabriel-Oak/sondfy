@@ -112,11 +112,24 @@ const testeInit = () => {
         console.log('active() Passou no teste. ');
         return console.log('');
     }
+
+    const tocarT = () =>{
+        console.log('Iniciando teste de tocar()');
+
+        //gerando elemento do teste
+        let input = 3;
+
+        //Efetuando teste
+        let output = tocar(input);
+        if(output != input) return console.log('tocar() Não passou no teste!');
+        console.log('tocar() passou no teste');
+        return console.log('');
+    }
     
     removeT();
     unselectT();
     tocarMusicaT();
     unselectT();
     activeT();
-    testando = false;
+    tocarT();
 }

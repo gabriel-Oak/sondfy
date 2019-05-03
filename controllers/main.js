@@ -1,3 +1,4 @@
+//limpesa de cache
 
 let musicas = fetchMusicas();
 let pls = fetchPlaylistsData();
@@ -14,7 +15,7 @@ let currentList = [];
 let listaTracks;
 
 
-player.addEventListener('ended', playerEnd());
+player.addEventListener('ended', playerEnd()); 
 
 
 
@@ -106,7 +107,8 @@ function tocar(nome){
     playing = true;
     player.play();
     setTimeout(progresBar(parseInt(player.currentTime),1010));
-    return player.setAttribute('playing', nome);
+    player.setAttribute('playing', nome);
+    return player.getAttribute('playing');
 }
 
 function playerEnd(){
