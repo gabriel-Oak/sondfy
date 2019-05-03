@@ -24,7 +24,8 @@ function remove(items){
         items[i].classList.add('offline');
     }
     return items;
-} 
+}
+
 
 function unselect(items){
     for(let i = 0; i < items.length; i++){

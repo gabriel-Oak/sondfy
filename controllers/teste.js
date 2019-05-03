@@ -125,6 +125,8 @@ const testeInit = () => {
         console.log('tocar() passou no teste');
         return console.log('');
     }
+
+    
     
     removeT();
     unselectT();

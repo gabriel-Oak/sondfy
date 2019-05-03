@@ -35,15 +35,15 @@ function createLista(dados){
             lista.appendChild(item);
         });
 
-        return dados.map(musica => {
+        dados.map(musica => {
             let item = document.createElement('li');
             item.classList.add('item-musica', musica.id, 'color-pink-purple');
             item.setAttribute('name',musica.id);
             item.innerHTML ='<i class="fas fa-music"></i> ' + musica.nome;
-            item.setAttribute('onclick','addToPl(this)');
+            item.setAttribute('onclick','addToPl(this); removeDaPlaylist(this)');
             repositorio.appendChild(item);
         })
-
+        return repositorio;
     }
 }
 
@@ -109,9 +109,23 @@ function resetFomr(){
     return currentList = [];
 }
 
-function canselarPlaylist(){
+function cancelarPlaylist(){
     resetFomr();
+    devolveAplaylist(document.getElementsByClassName('item-musica'));
     return document.getElementById('form-container-playlist').style.display = 'none';
+}
+
+
+function removeDaPlaylist(item){
+    item.style.display = 'none';
+    return item;
+}
+
+function devolveAplaylist(items){
+    for(i = 0; i < items.length; i++){
+        items[i].style.display = 'block';
+    }
+    return items;
 }
 
 function addToPl(item){
