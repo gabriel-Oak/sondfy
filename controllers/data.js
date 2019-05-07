@@ -97,10 +97,9 @@ const aljson = [
     }
 ];
 
-if(localStorage.getItem('sondfyUserData')){
-    document.getElementById('login-container').style.display = 'none'; 
-    userD = JSON.parse(localStorage.getItem('sondfyUserData'));
-}
+if(!localStorage.getItem('sondfyUserData')){
+    document.getElementById('login-container').style.display = 'flex'; 
+} else userD = JSON.parse(localStorage.getItem('sondfyUserData'));
 
 playlistData = [];
 

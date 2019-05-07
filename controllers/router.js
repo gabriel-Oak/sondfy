@@ -10,16 +10,33 @@ function router(link){
 
     if(link.id == 'musicas-link'){
         document.getElementById('container-musicas').classList.remove('offline');
-        document.getElementById('musicas-link').classList.add('active');
+        return document.getElementById('musicas-link').classList.add('active');
     } else if(link.id == 'playlists-link'){
         document.getElementById('container-playlists').classList.remove('offline');
-        document.getElementById('playlists-link').classList.add('active');
+        return document.getElementById('playlists-link').classList.add('active');
     } else if(link.id == 'artistas-link'){
         document.getElementById('container-artistas').classList.remove('offline');
-        document.getElementById('artistas-link').classList.add('active');
-    } else{
+        return document.getElementById('artistas-link').classList.add('active');
+    } else if(link.id == 'sair-link'){
+        localStorage.removeItem('sondfyUserData');
+        return location.reload();
+    } else {
         document.getElementById('container-albuns').classList.remove('offline');
-        document.getElementById('albuns-link').classList.add('active');
+        return document.getElementById('albuns-link').classList.add('active');
+    }
+
+    return false;
+}
+
+function loginToggle(option){
+    let login = document.getElementById('form-login');
+    let singin = document.getElementById('form-singin');
+    if(option.getAttribute('name') == 'login'){
+        login.style.display = 'flex';
+        singin.style.display = 'none';
+    } else {
+        login.style.display = 'none';
+        singin.style.display = 'flex';
     }
 }
 

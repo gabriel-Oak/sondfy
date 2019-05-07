@@ -32,6 +32,7 @@
                             <li onclick="router(this); toggleMenu()" id="artistas-link" class="links color-pink-red"><i class="fas fa-user-alt"></i> ARTISTAS</li>
                             <li onclick="router(this); toggleMenu()" id="albuns-link" class="links color-pink-red"><i class="fas fa-dot-circle"></i> ÁLBUNS</li>
                             <li onclick="router(this); toggleMenu()" id="musicas-link" class="links color-pink-red"><i class="fas fa-music"></i> MÚSICAS</li>
+                            <li onclick="router(this); toggleMenu()" id="sair-link" class="links color-pink-red"><i class="fas fa-sign-out-alt"></i> SAIR</li>
                         </ul>
                     </article>
     
@@ -116,31 +117,37 @@
 
         
         <section class="form-container login" id="login-container">
-            <div id="form-singin" class="form">
-                <h1>Cadastrar</h1>
-                <form onsubmit="return cadastrar(this)">
-                    <label for="name">Nome</label>
-                    <input type="text" name="name" id="input-name-singin" placeholder="Seu nome" required="true">
-                    <label for="user">Usuário</label>
-                    <input type="text" name="user" id="input-user-singin" placeholder="Seu usuário" required="true">
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="input-password-singin" placeholder="Sua senha" required="true">
-                    <label for="repassword">Confirme sua senha</label>
-                    <input type="password" name="repassword" id="input-repassword-singin" placeholder="Confirme sua senha" required="true">
-                    
-                    <input type="submit" style="color: #f22293; cursor: pointer; width: 98%"></input>
-                </form>
-            </div>
-            <div id="form-login" class="form">
-                <h1>Logar</h1>
-                <form onsubmit=" return logar(this)">
-                    <label for="user">Usuário</label>
-                    <input type="text" name="user" placeholder="Seu usuário" required="true">
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" placeholder="Sua senha" required="true">
-                                        
-                    <input type="submit" style="color: #f22293; cursor: pointer; width: 98%"></input>
-                </form>
+            <div class="form-selector">
+                    <ul class="login-options">
+                            <li onclick="loginToggle(this)" name="cadastrar" class="links color-pink-red">CADASTRAR</li>
+                            <li onclick="loginToggle(this)" name="login" class="links color-pink-red">LOGIN</li>
+                        </ul>
+                <div id="form-singin" class="form">
+                    <h1>Cadastrar</h1>
+                    <form onsubmit="return cadastrar(this)">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="input-name-singin" placeholder="Seu nome" required="true">
+                        <label for="user">Usuário</label>
+                        <input type="text" name="user" id="input-user-singin" placeholder="Seu usuário" required="true">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" id="input-password-singin" placeholder="Sua senha" required="true">
+                        <label for="repassword">Confirme sua senha</label>
+                        <input type="password" name="repassword" id="input-repassword-singin" placeholder="Confirme sua senha" required="true">
+                        
+                        <input type="submit" style="color: #f22293; cursor: pointer; width: 98%"></input>
+                    </form>
+                </div>
+                <div id="form-login" class="form">
+                    <h1>Logar</h1>
+                    <form onsubmit=" return logar(this)">
+                        <label for="user">Usuário</label>
+                        <input type="text" name="user" placeholder="Seu usuário" required="true">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" placeholder="Sua senha" required="true">
+                                            
+                        <input type="submit" style="color: #f22293; cursor: pointer; width: 98%"></input>
+                    </form>
+                </div>
             </div>
         </section>
 
