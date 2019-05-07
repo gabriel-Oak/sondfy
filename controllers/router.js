@@ -1,4 +1,6 @@
 
+let loading = document.getElementById('animation-frame');
+
 function router(link){
     let containers = document.getElementsByClassName('secoes');
     let links = document.getElementsByClassName('links');

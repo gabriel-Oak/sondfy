@@ -115,13 +115,16 @@ function fetchSingin(data){
         (response) => {
             if(response.status == 201){
                 console.log('Cadastro efutuado com sucesso');
+                fetchLogin(data);
             } else {
                 console.log(response.status);
+                loading.style.display = "none";
             }
         }
     ).catch(
         (error) => {
             console.error(error);
+            loading.style.display = "none";
         }
     );
 }
@@ -135,6 +138,7 @@ function fetchLogin(data){
         body: JSON.stringify(data)
     }).then(
         (response) => {
+            loading.style.display = "none";
             if(response.status == 200){
                 console.log('logado com sucesso');                
                 return response.json(); 
@@ -152,6 +156,7 @@ function fetchLogin(data){
         }
     ).catch(
         (error) => {
+            loading.style.display = "none";
             console.error(error);
         }
     );
@@ -168,13 +173,11 @@ function fetchPlaylistsData(){
         return fetch('http://api-sondfy.herokuapp.com/user/'+userD.user).then(
             (response) => {
                 if(response.status == 200){
-                    console.log('Workou as playlist');                
                     return response.json(); 
                 }
             }
         ).then(
             (data) => {
-                
                 createPlaylists(data.map( playlist => JSON.parse(playlist)));
                 pls = data.map( playlist => JSON.parse(playlist));
             }
@@ -200,7 +203,7 @@ function salvarPl(req){
                 'tracks': currentList
             }
         }
-        console.log(JSON.stringify(pl));
+        loading.style.display = "block";
         fetch('http://api-sondfy.herokuapp.com/user/'+userD._id, {
             method: 'put',
             headers:{
@@ -209,6 +212,7 @@ function salvarPl(req){
             body: JSON.stringify(pl)
         }).then(
             (response) => {
+                loading.style.display = "none";
                 if(response.status == 200){
                     alert('Sucesso ao salvar playlist');
                     return location.reload();

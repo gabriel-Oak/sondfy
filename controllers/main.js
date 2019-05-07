@@ -12,7 +12,6 @@ let progressBar = document.getElementById('progress-bar');
 let currentList = [];
 let listaTracks;
 
-
 player.addEventListener('ended', playerEnd()); 
 
 function remove(items){
@@ -239,6 +238,7 @@ function next(){
 }
 
 function cadastrar(form){
+    loading.style.display = "block";
     if(form.password.value == form.repassword.value){
         let user = {
             "name": form.name.value,
@@ -256,6 +256,7 @@ function cadastrar(form){
 }
 
 function logar(form){
+    loading.style.display = "block";
     let user = {
         "user": form.user.value,
         "password": form.password.value
