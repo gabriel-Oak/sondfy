@@ -1,5 +1,3 @@
-//limpesa de cache
-
 let musicas = fetchMusicas();
 let pls = fetchPlaylistsData();
 let artistas = fetchArtistas();
@@ -16,8 +14,6 @@ let listaTracks;
 
 
 player.addEventListener('ended', playerEnd()); 
-
-
 
 function remove(items){
     for(let i = 0; i < items.length; i++){
@@ -242,7 +238,32 @@ function next(){
     return playerEnd();
 }
 
+function cadastrar(form){
+    if(form.password.value == form.repassword.value){
+        let user = {
+            "name": form.name.value,
+            "user": form.user.value,
+            "password": form.password.value
+        }
+        console.log(user);
+        fetchSingin(user);
+    } else{
+        alert('Por favor redigite a senha');
+        form.repassword.value = "";
+    }
+    
+    return false;
+}
+
+function logar(form){
+    let user = {
+        "user": form.user.value,
+        "password": form.password.value
+    };
+    fetchLogin(user);
+    return false;
+}
+
 createAlbuns(albuns);
 createArtistas(artistas);
-createPlaylists(pls);
 createLista(musicas);

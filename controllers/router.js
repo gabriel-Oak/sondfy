@@ -48,7 +48,7 @@ function createLista(dados){
 }
 
 function createPlaylists(data){
-    
+    if(!data[0]) return false;
     let container = document.getElementById('secao-de-playlist');
     data.map(item => {
         let div = document.createElement('div');
@@ -132,16 +132,6 @@ function addToPl(item){
     id = item.getAttribute('name');
     if(currentList.filter(item => item == id) < 1) currentList.push(id); 
     return currentList;
-}
-
-function salvarPl(req){
-    if(currentList.length > 0){
-        let res = {
-            'title': '▒'+req.titulo.value,
-            'tracks': currentList
-        }
-        localStorage.setItem(res.title, JSON.stringify(res));
-    }
 }
 
 function removePls(items){

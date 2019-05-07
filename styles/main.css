@@ -66,6 +66,13 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
     form input:focus{border: 1px solid #f22254; color:#f22254;}
     #form-playlist .cancelar-button{cursor: pointer; position: absolute; bottom: 10px; left: 20px; top: auto; height: 40px; color: white; background-color:#f22254; border: none; border-radius: 10px;}
 
+.login{display: flex;}
+    .form{width: 265px;}
+    .form input{ width: 90%;}
+    .form h1{font-size: 25px;}
+    #form-singin{background-color: #1d2d3c; position: relative; border-radius: 10px; overflow-y: auto;}
+    #form-login{background-color: #1d2d3c; position: relative; border-radius: 10px; overflow-y: auto;}
+
 /*ANIMAÇÕES*/
 @keyframes menuOut {
     0% {left: 0; display: block;}
@@ -119,6 +126,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         }
 
         #form-playlist{height: 95vh; width: 95vw; top: 2.5vh; left: 2.5vw;}
+
+        .login{flex-direction: column; justify-content:center;}
+            .form{display: flex; flex-direction: column; padding: 5%; margin: 20px auto 0 auto;}
 }
 
 
@@ -160,6 +170,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         }
 
     #form-playlist{height: 90vh; width: 60vw; top: 5vh; left: 20vw;}
+
+    .login{flex-direction: column; justify-content:center;}
+     .form{display: flex; flex-direction: column; padding: 5%; margin-top: 50px; margin: 20px auto 0 auto;}
 }
 
 /*--Not so big--*/
@@ -203,6 +216,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         }
 
     #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
+
+    .login{flex-direction: row; justify-content: space-around;}
+     .form{display: flex; flex-direction: column; height: 55%; padding: 20px; margin-top: 50px;}
 }
 
 
@@ -236,6 +252,9 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow-y: hidden
         #volume-container{width: 13vw!important; margin: auto 5px!important;}
 
     #form-playlist{height: 90vh; width: 45vw; top: 5vh; left: 27.5vw;}
-        
+    
+    .login{flex-direction: row; justify-content: space-around;}
+     .form{display: flex; flex-direction: column; height: 60%; padding: 5%; margin-top: 50px;}
+     
 }
 
