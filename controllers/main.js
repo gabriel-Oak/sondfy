@@ -84,11 +84,15 @@ function tocar(nome){
     document.getElementById('capa').src = dadosMusica[0].img;
 
     playing = true;
-    player.play();
+    //player.play();
     window.clearInterval(progressTimer);
     setTimeout(progresBar(parseInt(player.currentTime),1010));
     player.setAttribute('playing', nome);
     return player.getAttribute('playing');
+}
+
+function canplay(audio){
+    audio.play();
 }
 
 function playerEnd(){

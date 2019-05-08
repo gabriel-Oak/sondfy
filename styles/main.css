@@ -1,6 +1,10 @@
 /*--RESET--*/
 *{margin: 0; top: 0; left: 0; font-size: 100%; outline: 0;}
 body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
+h1::selection{background-color: #f22254; color: white;}
+h2::selection{background-color: #f22254; color: white;}
+h3::selection{background-color: #f22254; color: white;}
+li::selection{background-color: #f22254; color: white;}
 
 .color-pink-red:hover{ color: #f22254; }
 .color-pink-purple:hover{ color: #f22293; }

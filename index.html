@@ -79,8 +79,8 @@
         </section>
         <section class="bot-content">
             <div class="musica-atual" id="musica-atual">
-                <h3>Lorem Ipsum</h3>
-                <span>Mario e os fronts</span>
+                <h3></h3>
+                <span></span>
             </div>
             <button class="botao color-pink-red arrow" onclick="prev()"><i class="fas fa-backward"></i></button>
             <button class="botao color-pink-red play" onclick="pausePlay()"><i class="fas fa-caret-right" id="icone-play"></i></button>
@@ -88,7 +88,7 @@
             <div id="progress-container">
                 <div id="progress-bar"></div>
                 <div id="progress-captor"></div>
-                <audio src="" id="audio" onended="playerEnd()" ></audio>
+                <audio src="" id="audio" onended="playerEnd()" oncanplay="canplay(this);"></audio>
             </div>
             <span id="tempo"></span>
             <button class="botao color-pink-red loops" id="random" onclick="toggleRandom()"><i class="fas fa-random"></i></button>
