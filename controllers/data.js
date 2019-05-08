@@ -127,7 +127,7 @@ function fetchSingin(data){
         }
     );
 }
-
+ 
 function fetchLogin(data){
     fetch('http://api-sondfy.herokuapp.com/user/'+data.user,{
         method:'post',
