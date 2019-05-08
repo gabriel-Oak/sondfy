@@ -19,6 +19,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
     .menu-div #check{display: none;}
     .menu-div #botaoM{ font-size: 1.5em; position: fixed; z-index: 2; top: 15px; left: 15px; cursor: pointer; transition: color .5s;}
     .no-nav{animation: menuOut ease .2s 1;}
+    .user-name{position: absolute; top: auto; margin: 10px;}
 
 .content{z-index: 0; background-image: radial-gradient(farthest-corner at 50% 50% , #182b3c 0%, #0a1727 100%); height: 100%; overflow-y: auto; overflow-x: hidden;}
     .content article{box-shadow: 0px 1px 2px #333; padding: 16px; background-color: rgba(44, 44, 44, .8); border-radius: 5px; margin: 10px auto;}
@@ -126,6 +127,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
     .side-nav{width: 80vw; position: fixed; min-height: 100vh; margin-bottom: 8vh;}
      .side-nav article{ margin: 50px auto 0 auto;}
      .side-nav ul{ line-height: 40px; }
+     .user-name{ bottom:0; max-width: 79vw;}
     
         /*Conteudo*/
     .content{ width: 100vw; }
@@ -172,6 +174,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
    .side-nav{width: 50vw; position: fixed; min-height: 100vh; margin-bottom: 8vh;}
     .side-nav article{ margin: 50px auto 0 auto;}
     .side-nav ul{ line-height: 40px; }
+    .user-name{ bottom:0; max-width: 49vw;}
    
        /*Conteudo*/
    .content{ width: 100vw; }
@@ -216,6 +219,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
    .side-nav{width: 20vw;}
        .side-nav ul{line-height: 40px;}
        .menu-div{ display: none; }
+       .user-name{ bottom:12vh; max-width: 19vw;}
        
        /*Conteudo*/
    .content{ width: 80vw; }
@@ -263,6 +267,7 @@ body{font-family: Arial, Helvetica, sans-serif; color: white; overflow: hidden;}
     .side-nav{width: 20vw;}
         .side-nav ul{ line-height: 50px; }
         .menu-div{ display: none; }
+        .user-name{ bottom:12vh; max-width: 19vw;}
     
         /*Conteudo*/
     .content{width: 80vw; }

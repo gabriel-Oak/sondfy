@@ -221,7 +221,6 @@ function cadastrar(form){
             "user": form.user.value,
             "password": form.password.value
         }
-        console.log(user);
         fetchSingin(user);
     } else{
         alert('Por favor redigite a senha');

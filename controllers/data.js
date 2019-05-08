@@ -99,7 +99,10 @@ const aljson = [
 
 if(!localStorage.getItem('sondfyUserData')){
     document.getElementById('login-container').style.display = 'flex'; 
-} else userD = JSON.parse(localStorage.getItem('sondfyUserData'));
+} else{
+    userD = JSON.parse(localStorage.getItem('sondfyUserData'));
+    document.getElementById('user-name').innerText = userD.name;
+} 
 
 playlistData = [];
 
@@ -113,10 +116,9 @@ function fetchSingin(data){
     }).then(
         (response) => {
             if(response.status == 201){
-                console.log('Cadastro efutuado com sucesso');
                 fetchLogin(data);
             } else {
-                console.log(response.status);
+                console.error(response.status);
                 loading.style.display = "none";
             }
         }
@@ -139,7 +141,6 @@ function fetchLogin(data){
         (response) => {
             loading.style.display = "none";
             if(response.status == 200){
-                console.log('logado com sucesso');                
                 return response.json(); 
             } else if(response.status == 403){
                 return alert('Sua senha pode estar errada!');
@@ -166,9 +167,7 @@ function fetchMusicas(){
 }
 
 function fetchPlaylistsData(){
-    console.log(userD)
     if(userD){
-        console.log(userD.playlists);
         return fetch('http://api-sondfy.herokuapp.com/user/'+userD.user).then(
             (response) => {
                 if(response.status == 200){
