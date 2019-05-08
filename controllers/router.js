@@ -40,6 +40,40 @@ function loginToggle(option){
     }
 }
 
+
+
+function toggleMenu(){
+    let menu = document.getElementById('navigator');
+    if(window.innerWidth < 768){
+        if(!menu.classList.contains('no-nav')) {
+
+            menu.classList.add('no-nav');
+            setTimeout(() => menu.style.display = 'none', 200);
+    
+        }
+        else {
+    
+            menu.style.display = 'block';
+            menu.classList.remove('no-nav');
+    
+        }
+    }
+}
+
+function toggleVolume(){
+    let volume = document.getElementById('volume-container');
+    if(window.innerWidth < 1200){
+        if(volume.style.display == 'none' || volume.style.display == ''){
+            volume.style.display = 'block';
+            volume.classList.replace('volumeOut','volumeIn');
+        } else {
+            volume.classList.replace('volumeIn','volumeOut');
+            setTimeout(() => {volume.style.display = 'none'}, 100);
+        } return 
+    } 
+    return false;
+}
+
 function createLista(dados){
     let lista = document.getElementById('lista-default');
     let repositorio = document.getElementById('lista-playlist');

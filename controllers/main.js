@@ -31,24 +31,6 @@ function unselect(items){
 } 
 
 
-function toggleMenu(){
-    let menu = document.getElementById('navigator');
-    if(window.innerWidth < 768){
-        if(!menu.classList.contains('no-nav')) {
-
-            menu.classList.add('side-nav', 'no-nav');
-            setTimeout(() => menu.style.display = 'none', 400);
-    
-        }
-        else {
-    
-            menu.style.display = 'block';
-            menu.classList.replace('no-nav', 'side-nav');
-    
-        }
-    }
-}
-
 function conserta(){
     if(window.innerWidth > 768 ){
 
@@ -209,15 +191,6 @@ function toggleRandom(){
     if(random) return button.classList.add('active');
     else return button.classList.remove('active');
 
-}
-
-function toggleVolume(){
-    let volume = document.getElementById('volume-container');
-    if(window.innerWidth < 1200){
-        if(volume.style.display == 'none' || volume.style.display == '') return volume.style.display = 'block';
-        else return volume.style.display = 'none'
-    } 
-    return false;
 }
 
 document.getElementById('volume-captor').addEventListener('mousedown', (event) => {

@@ -34,6 +34,7 @@
                             <li onclick="router(this); toggleMenu()" id="musicas-link" class="links color-pink-red"><i class="fas fa-music"></i> MÚSICAS</li>
                             <li onclick="router(this); toggleMenu()" id="sair-link" class="links color-pink-red"><i class="fas fa-sign-out-alt"></i> SAIR</li>
                         </ul>
+                        <h3>Nome</h3>
                     </article>
     
             </nav>
@@ -93,7 +94,7 @@
             <button class="botao color-pink-red loops" id="random" onclick="toggleRandom()"><i class="fas fa-random"></i></button>
             <button class="botao color-pink-red loops" id="repeat" onclick="toggleRepeat()"><i class="fas fa-redo-alt"></i></button>
             <button class="botao color-pink-red loops" id="volume" onclick="toggleVolume()"><i class="fas fa-volume-up"></i></button>
-            <div id="volume-container">
+            <div id="volume-container" class="volumeIn">
                 <div id="volume-bar"></div>
                 <div id="volume-captor"></div>
             </div>
