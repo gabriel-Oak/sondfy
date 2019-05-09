@@ -32,8 +32,10 @@ li::selection{background-color: #f22254; color: white;}
     .lista li{line-height: 35px;}
     .item-musica{cursor: pointer; transition: color .5s; line-height: 20px; font-size: 20px;}
     #capa {position: absolute; z-index: -1; border-radius: 8px; opacity: 0.5;}
+    
     .playlist{position: relative; border: dashed 5px white; border-radius: 5px; text-align: center; cursor:pointer; margin-top: 20px;}
     .playlist h1{ font-size: 1.5em!important;}
+    .fa-times{ font-size: 1.5em; position: absolute; cursor: pointer; padding: 5px; transition: color .5s;}
     .playlist p {font-size: 1em; cursor: pointer; vertical-align: middle; margin: auto;}
     .playlist:not(.thumbnail) h1{ margin-top: 20px;}
     .playlist:not(.thumbnail) p{ margin-bottom: 20px;}

@@ -107,12 +107,17 @@ function createPlaylists(data){
         let div = document.createElement('div');
         let h1 = document.createElement('h1');
         let img = document.createElement('img');
+        let i = document.createElement('i');
+        i.classList.add('fas', 'fa-times', 'color-pink-red');
+        i.setAttribute('name',item.title);
+        i.setAttribute('onclick','deletePlaylist(this)');
         img.src = musicas[item.tracks[0]].img
         div.classList.add('playlist', 'thumbnail');
         div.setAttribute('onclick','playP(this)');
         div.setAttribute('name',item.title);
         h1.innerText = item.title.replace('▒','');
         div.appendChild(h1);
+        div.appendChild(i);
         div.appendChild(img);
         container.appendChild(div);
         
@@ -155,6 +160,12 @@ function createAlbuns(data){
 
 function newPlaylist(){
     return document.getElementById('form-container-playlist').style.display = 'block';
+}
+
+function deletePlaylist(playlist){
+    loading.style.display = "block";
+    let payload = {"_id":userD._id,"title":playlist.getAttribute('name')}
+    fetchDeletePlaylist(payload);
 }
 
 function resetFomr(){

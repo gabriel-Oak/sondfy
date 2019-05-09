@@ -222,3 +222,22 @@ function salvarPl(req){
         return false;
     }
 }
+
+function fetchDeletePlaylist(payload){
+    fetch('http://api-sondfy.herokuapp.com/user/', {
+        method: 'delete',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).then(
+        (response) => {
+            loading.style.display = "none";
+            if(response.status == 200){
+                return location.reload();
+            } else {
+                console.error('Deu erro com sua playlist :/');
+            }
+        }
+    ).catch((erro) => console.error(erro));
+}
