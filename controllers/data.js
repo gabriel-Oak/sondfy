@@ -116,12 +116,13 @@ function fetchSingin(data){
     }).then(
         (response) => {
             if(response.status == 201){
-                fetchLogin(data);
-                loading.style.display = "none";
-            } else {
+                fetchLogin(data);       
+            } else if(response.status == 403){
+                alert('Esse usuário ja esta cadastrado :/');
+            } {
                 console.error(response.status);
-                loading.style.display = "none";
             }
+            loading.style.display = "none";
         }
     ).catch(
         (error) => {
