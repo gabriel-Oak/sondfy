@@ -117,7 +117,7 @@ function fetchSingin(data){
         (response) => {
             if(response.status == 201){
                 fetchLogin(data);       
-            } else if(response.status == 403){
+            } else if(response.status == 403 || response.status == 500){
                 alert('Esse usuário ja esta cadastrado :/');
             } else {
                 console.error(response.status);
