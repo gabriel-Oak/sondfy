@@ -228,6 +228,7 @@ function cadastrar(form){
         fetchSingin(user);
     } else{
         alert('Por favor redigite a senha');
+        loading.style.display = "none";
         form.repassword.value = "";
     }
     

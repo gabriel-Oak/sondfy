@@ -117,6 +117,7 @@ function fetchSingin(data){
         (response) => {
             if(response.status == 201){
                 fetchLogin(data);
+                loading.style.display = "none";
             } else {
                 console.error(response.status);
                 loading.style.display = "none";
@@ -131,6 +132,7 @@ function fetchSingin(data){
 }
  
 function fetchLogin(data){
+    loading.style.display = "block";
     fetch('http://api-sondfy.herokuapp.com/user/'+data.user,{
         method:'post',
         headers:{
